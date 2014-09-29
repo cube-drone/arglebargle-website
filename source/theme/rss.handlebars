@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>{{config.title}}</title>
+    <link>{{config.baseurl}}</link>
+    <description>{{config.subtitle}}</description>
+
+    {{#each-limit index 10}}
+    <item>
+        <title>{{this.title}}</title>
+        <link>{{config.baseurl}}/{{this.id}}.html</link>
+        <description>{{this.html}}</description>
+        <pubDate>{{this.pubdate}}</pubDate>
+        <guid>{{config.baseurl}}/{{this.id}}.html</guid>
+        <dc:date>{{this.created}}</dc:date>
+    </item>
+    {{/each-limit}}
+  </channel>
+</rss>

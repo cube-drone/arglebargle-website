@@ -1,0 +1,26 @@
+{{> partials/header }}
+
+<a href="about.html">About</a>
+
+<ul>
+{{#each-limit index 1}}
+<li class='special post'><a href="{{this.id}}.html">{{this.title}}</a> - {{this.human_date}} - {{{this.html}}}</li>
+{{/each-limit}}
+</ul>
+
+<ul>
+{{#each index}}
+<li class='post'><a href="{{this.id}}.html">{{this.title}}</a> - {{this.human_date}}</li>
+{{/each}}
+</ul>
+
+{{#each-key categories }}
+    <h2 id="{{this.key}}">{{this.key}}</h2>
+    <ul>
+        {{#each this.value}}
+            <li class='post'><a href="{{this.id}}.html">{{this.title}}</a></li>
+        {{/each}}
+    </ul>
+{{/each-key}}
+
+{{> partials/footer }}

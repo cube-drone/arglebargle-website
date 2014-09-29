@@ -1,0 +1,90 @@
+--- 
+content_type: markdown
+title: "Watermelon Theme, and A Tale of Two Rubies" 
+visible: true
+created: "2014-02-23T02:55:00-07:00"
+categories: ["Needlessly Technical"]
+content: |
+  curtis.lassam.net is now rocking a brand new [busbus](https://github.com/classam/busbus) 
+  theme.
+
+  _Wait, what is Busbus?_
+
+  Oh, I think I might have mentioned it like a year ago. At some point in 
+  the past I decided that I had had enough of Wordpress and built a 
+  blog engine as a Ruby project. It's, I think, one of the first things I'd ever built in
+  Ruby. It works as a compiler, taking a 
+  [directory full of YAML files](https://github.com/classam/Blog)
+  and rendering them into a website.  Different YAML files can have different
+  content types, so I can write blog posts in markdown, include comics as
+  simple image links, and paste IRC conversations in directly from IRC. 
+
+  Busbus, all of the blog's YAML files, and the Busbus themes for this site, 
+  as well as http://cube-drone.com , all live on github.  Pushing any files
+  to GitHub triggers the recompilation of the live site. 
+
+  It's completely undocumented, and complicated as heck. I wouldn't recommend
+  it for anybody but me. I'm not sure if I'd even recommend it for me - but
+  I certainly like how simple it is for me to manage the site using only
+  vim and bash and git. Isn't it just like a programmer to make everything
+  in such a way that only a programmer could enjoy it? 
+
+  Anyhow, [here's a link to the front-page of the old theme](http://curtis.lassam.net/2014_copy/), 
+  just for comparison's sake. I'll miss you, silly flipping!
+
+  The new theme's source is [here](https://github.com/classam/busbus_theme/tree/bootstrap3).
+
+  ## Features ##
+  
+  * The site now properly supports Category filtering. If you click on one of
+    the category buttons, like "Comic", it will filter any non-"Comic" blog
+    posts out of the page. 
+  * The site's color scheme is now delightfully watermelon-flavored. 
+  * Important navigational elements are arrayed along the top of the page. 
+    This is important because some of the site's content - namely, comics 
+    - are 900+ pixels wide. 
+  * [Twitter Bootstrap 3](http://getbootstrap.com) providing the core grid
+    system, rather than a grid system of my own devising. It does a better 
+    job of laying things out responsively. 
+  * [Fontawesome](http://fortawesome.github.io/Font-Awesome/) icons! Google Fonts fonts!
+  * The blog's index page loads the content of the past several weeks, giving
+    more of a convenient entry point into the blog's content. 
+
+  ## Antifeatures ##
+
+  * There's no silly flipping. I'll miss you, silly flipping. 
+  * I think the design is more usable but less visually compelling. 
+
+  ## And now for a story about Ruby ##
+  
+  "What version of Ruby should I install on my computer to test the new theme?"
+
+  Well, 1.9.2 seems like the obvious choice. Word on the street is that not
+  all of the Windows libraries are up-to-date for Ruby 2.1, although this is 
+  more hearsay than reasonable thought. Anyways, this system was built with a 
+  Ruby 1.X, I don't want to spend all day dealing with version compatibility 
+  issues.
+
+  Oh, 1.9.2 doesn't work. When I run Busbus, it throws an error having to do
+  with the consumption of my YAML files. 
+
+  Between 1.9.2 and 1.8.7, Ruby changed its core YAML processing engine to
+  one that can't handle non-utf-8 encoded inputs. Glorious. I never even knew
+  that ISO latin-1 or ASCII wasn't supposed to be valid for YAML files. 
+  Now I know. There's a lot of YAML files in my blog folder, though. 
+  I certainly on't feel like converting them all. 
+
+  I should get things running with a modern Ruby, though, right? 
+  In order to get everything running in 1.9.2, we make judicious 
+  use of the 'encode' function to get everything converted properly to utf-8
+  before we try to read it. The '?' character proliferates.   
+
+  And then we deploy the system... and it fails. Because 'encode' as a function
+  was included in Ruby 1.9.2, but the target Dreamhost server is running 1.8.7 
+  because upgrades are expensive and hard, apparently. 
+
+  So the YAML code isn't forwards OR backwards compatible between 1.9.2 and 
+  1.8.7. Glee. Okay, now there are two different branches of the code, one
+  for each of the Ruby versions. I am not sure if I am okay with this. 
+  
+  Ah, well, at the end of the day, it worked, right? 

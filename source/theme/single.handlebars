@@ -1,0 +1,36 @@
+{{> partials/header }}
+
+<nav class='main fpnl'>
+    <a href="{{first.id}}.html">First</a>
+    {{# if previous }}
+        <a href="{{previous.id}}.html">Previous</a>
+    {{/if}}
+    {{# if next }}
+    <a href="{{next.id}}.html">Next</a>
+    {{/if}}
+    <a href="{{last.id}}.html">Last</a>
+</nav>
+
+{{# each category_items }}
+    <nav class='category fpnl'>
+    <strong>{{this.name}}</strong>
+    <a href="{{this.first.id}}.html">First</a>
+    {{# if this.previous }}
+        <a href="{{this.previous.id}}.html">Previous</a>
+    {{/if}}
+    {{# if this.next }}
+    <a href="{{this.next.id}}.html">Next</a>
+    {{/if}}
+    <a href="{{this.last.id}}.html">Last</a>
+{{/each}}
+
+<section class='post'>
+    <h2>{{title}}</h2>
+    <h3 class='created'>{{human_datetime}}</h3>
+
+    {{{html}}}
+
+</section>
+
+{{> partials/footer }}
+

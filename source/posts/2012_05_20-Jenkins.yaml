@@ -1,0 +1,95 @@
+--- 
+content_type: markdown
+title: Jenkins
+visible: true
+created: "2012-05-20T15:22:19-07:00"
+categories: ["Tech"]
+content: |
+  So, in my new job, my first quest has been to get a django project under build and test. 
+  This has involved a lot of Python scripting, and learning four new technologies, 
+  
+  - Fabric, for running remote SSH scripts,
+  - VirtualBox, a Virtual Machine manager,
+  - virtualenv & distribute, a virtual environment and package manager for python, and 
+  - Jenkins, a CI server
+  
+  The way that this works is only medium-convoluted - a script creates a Virtual Machine, creates
+  a map to that machine's port 22, and then uses Fabric to log in, prepare the environment, use SVN 
+  to pull a copy of the code, set it up, and run all of its tests.  If anything goes terribly wrong, the 
+  script reports a horrible error and dies to death.  Jenkins polls for subversion changes, runs the script,
+  and stores results.
+
+  Fabric
+  ======
+  [Fabric](http://docs.fabfile.org/en/1.4.2/index.html) provides a python framework for running remote commands. 
+
+  The syntax is dead-easy.  The library provides aliases to all of its functions from fabric.api:  
+
+      from fabric.api import run
+    
+      def host_type():
+        run('uname -s')
+  
+  Running fabric files takes a build-like syntax - give it the functions that want to be run.
+
+      >> fab host_type
+  
+  Either it will prompt for host and login information, or I can provide these things as part of an environment argument.
+
+      env.hosts = ['localhost']
+      env.username = 'steve'
+      env.password = 'hunter2' 
+  
+  There's even 'local', a wrapper around python's 'subprocess' for local commands. 
+
+      local( 'echo "boosh"' )
+
+  So, we can use this to run VirtualBox setup scripts, and then, once a VM exists, SSH into that VM to issue commands. 
+
+  VirtualBox
+  ==========
+  [VirtualBox](https://www.virtualbox.org/) needs little introduction - it's Virtual Machine software. I've long been a proponent
+  of VMWare as a Virtual Machine provider, but VirtualBox makes the strong argument of being much more free.
+
+  VirtualBox works about how you might imagine - creating Virtual Machines, watching them. Spying on them.  The real meat, though,
+  is in [VBoxManage](http://www.virtualbox.org/manual/ch08.html), 
+  the tools that they provide for managing Virtual instances from the command line. 
+
+  VBoxManage is a little bit more arcane than fabric, but it's still reasonably easy to get a VM cloned, started, shut down, and deleted.
+
+      VBoxManage clonevm "the_vm_to_clone" --name "the_cloned_vm" --keepallmacs
+      VBoxManage modifyvm "the_cloned_vm" --natpf1 "ssh,tcp,,2222,,22"
+      VBoxHeadless startvm "the_cloned_vm"
+
+  virtualenv
+  ==========
+  In order for Ruby to deal with their extremely active and *cough* often unstable *cough* package environment, 
+  Ruby has rvm and ruby gems, a first-class environment for downloading and managing packages. 
+
+  In a similar vein, Python has virtualenv, distribute, and pip. [virtualenv](http://pypi.python.org/pypi/virtualenv) allows users to keep entire python environments,
+  down to the specfic python version, slotted away in their own folder. 
+  
+  Jenkins
+  =======
+  So, now that we have a script to create a machine, pull an environment, svn update a codebase, build it, and test it, we need to run
+  it.  Preferably, we should only run it when the subversion repository has been updated. 
+
+  I started this quest the way that any sensible, insane adult would go about it - "I don't need a build server, I'm not building anything. 
+  just running a script. It's just a simple cron job."
+
+  So, I started writing a cron job that would ping the subversion repository to check for updates.  
+  I had it working pretty well, so, then I was looking for a good way to manage cron jobs.
+
+  "Jenkins".  But that's a CI solution! I don't need a whole heavyweight build solution. I just need some way to run cron jobs, 
+  have them ping a subversion server now and then, record their results, maybe e-mail me when they've failed, you know, 
+  just a little bit of run of the mill scriptable stuff. 
+
+  Apparently, that is _exactly what Jenkins does_.  To a tee. 
+  
+  Ah.  
+  
+  Well, don't I feel the fool.
+
+  Project complete. It won't be long before I have this system automatically e-mailing developers when something has broken.
+
+  Oh yes. Soon. SOON. 

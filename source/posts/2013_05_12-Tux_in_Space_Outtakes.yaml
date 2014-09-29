@@ -1,0 +1,53 @@
+--- 
+content_type: irc
+title: "Tux in Space Outtakes" 
+visible: true
+created: "2013-05-12T03:00:00-07:00"
+categories: ["Comics"]
+content: |
+  <lassam> I'm trying to think of a good three panel "The ISS has switched to Linux" joke
+  <lassam> Whenever I listen to the Penny Arcade podcast, I think "I need a comics partner to make comic writing easier" but then I realize that I'm not particularly good at the writing _or_ the art, so what the hell would I do in the comics team
+  <lassam> fetch drinks?
+  <n0ob> heh
+  * n0ob thinks about a falling out of the sky joke
+  <n0ob> but since it switched to Linux it stops falling out of the sky and flys away towards the outer solar system
+  <pfak> :|
+  <n0ob> of course, this depends on people knowing that being in orbit is just falling to earth and constantly missing
+  <lassam> "We're accellerating uncontrollably towards Jupiter"  "Were you fiddling with xorg.conf again?"  "yes"
+  <lassam> "I just wanted to get dual screens working properly"
+  <lassam> "We're accellerating uncontrollably towards the sun" / "What did you DO?" / "There was a forum post in Brazilian that had instructions on how to get Flash working"
+  * eqj (~eqj@d23-16-26-4.bchsia.telus.net) has joined
+  <lassam> eqj: What's funnier, uncontrollably accellerating towards the sun, or uncontrollably accellerating towards Jupiter? 
+  <eqj> Jupiter
+  * lassam scribbles in a notepad (Jupiter)
+  <plyp_home> sun is overdone
+  <lassam> I want to do a three-panel about the ISS switching over to Linux, but it's hard to think of a Linux joke that doesn't feel trite and overdone. 
+  <lassam> My current best candidate is: "We're accellerating uncontrollably towards Jupiter"  "Were you fiddling with xorg.conf again?"  "yes" "I just wanted to get dual screens working properly"
+  <ffff> hmm
+  <lassam> Oh, with the obligatory "In recent news, the International Space Station has switched to Linux" 
+  <lassam> ... 
+  <lassam> "Unfortunately, they switched to Gentoo" / blank panel / comet headed towards earth
+  <lassam> man, that feels lazy
+  <lassam> But cheap shots at Gentoo are always funny
+  <lassam> ..
+  <lassam> maybe the ISS cosmonauts start fighting over Gnome vs. KDE
+  <lassam> "The first thing they did was switch from Gnome to KDE" / "Somehow, they found it more comforting than Gnome" / < a shot of an obscenely complicated set of gauges and dials > 
+  * eqj has quit (Quit: Bai!)
+  <ffff> lassam: "in recent news..." -> ubuntu upgrade -> flaming death?
+  * ffff is kinda drawing a blank
+  <lassam> I think I'm going to put the kybosh on a three-panel ending in a comet 
+  <lassam> It's funny, but it feels too easy
+  <lassam> You could build an arbitrary set of comics out of
+  <lassam> "In recent news, Group X has adopted Technology Y"  / beat / Picture of Group X failing dramatically
+  <ffff> true
+  <ffff> in the same vein I think it's probably kinda hard to make a non-formulaic linux comic.
+  <ffff> ... well, other than maybe Everybody Loves Eric Raymond
+  <lassam> It's true, there's sort of the standard set of Linux jokes
+  <lassam> BOHO, KDE AND GNOME
+  <lassam> BOHO, SUPPORT IS AD-HOC
+  <lassam> BOHO, XORG.CONF
+  <lassam> BOHO, BEARDS
+  <lassam> ...
+  <lassam> "Mission control, in the past three days we've all grown full beards and we don't understand why"
+  <n0ob> not bad
+  <lassam> And then the last frame is just a picture of the ISS with a beard

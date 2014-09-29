@@ -1,0 +1,71 @@
+---
+title: ! 'A complete intro to unit testing, as described in 20 minutes of IRC chatter. '
+created: '2012-03-27T15:55:31+00:00'
+visible: true
+categories:
+- Needlessly Technical
+content_type: html
+content: ! "<pre style='white-space:pre-wrap;'> \n\n<strong>Boose|work \t:</strong>
+  ... the purposes of UNIT TESTING (imagine me saying that at full volume, every single
+  time) are manifold.\t\n<strong>eqj^w^ \t:</strong> manfold\n<strong>Boose|work \t:</strong>
+  MANFUL.\n<strong>eqj^w^ \t:</strong> full of men\n<strong>wildcard0 \t:</strong>
+  beef\n<strong>Boose|work \t:</strong> Men everywhere. They use unit testing.\n<strong>eqj^w^
+  \t:</strong> I beefed that unit testing, bro\n<strong>eqj^w^ \t:</strong> hella
+  beefed\n<strong>wildcard0 \t:</strong> haha\n<strong>Boose|work \t:</strong> 1.
+  To catch 'regressions' - modules that used to work, but now don't, thanks to a change
+  that you have inadvertently made.\n<strong>Boose|work \t:</strong> 2. To stop your
+  idiot co-workers from changing the behavior of your modules without asking you,
+  first.\n<strong>n0ob \t:</strong> 2.a. Unless they are smart enough to run the tests
+  and modify them\n<strong>eqj^w^ \t:</strong> 1.b. to avoid really lame-ass errors
+  being found in user testing and wasting someone's bench time (at my work)\n<strong>Boose|work
+  \t:</strong> 3. To partially document the proper use of your module. (\"How is this
+  supposed to work?\" \"Ooooooh.\" )\n<strong>Boose|work \t:</strong> 4. In the case
+  of _interpreted_ languages, to catch errors that normally would be caught in a compilation
+  step in _compiled_ languages.\n<strong>Boose|work \t:</strong> \"Oh, shit, this
+  function doesn't even exist. \"\n<strong>wildcard0 \t:</strong> 5. to look like
+  you're coding something day, but dont need to have anything to show for it\n<strong>Boose|work
+  \t:</strong> ^\n<strong>eqj^w^ \t:</strong> haha yes\n<strong>Boose|work \t:</strong>
+  6. The act of designing your code in order to be easily black-box testable by an
+  outside entity also forces you to modularize the design in ways that are almost
+  always positive.\n<strong>eqj^w^ \t:</strong> wildcard0: except last week. I have
+  pages upon pages of labels to show for our regression test\n<strong>eqj^w^ \t:</strong>
+  my coworker was all \"this was a fun kindergarten excercise of cut and paste. I'm
+  going to hang this in my cubicle\"\n<strong>triskele \t:</strong> today's word:
+  beef (v) beefed, beefing\n<strong>wildcard0 \t:</strong> \"arts and crafts dept\"\n<strong>wildcard0
+  \t:</strong> haha\n<strong>triskele \t:</strong> beef as a verb.\n<strong>Boose|work
+  \t:</strong> Beefocity.\n<strong>eqj^w^ \t:</strong> wildcard0: exackly\n<strong>Boose|work
+  \t:</strong> To write a unit test is simple.\n<strong>Boose|work \t:</strong> It's
+  basically just a little block of code.\n<strong>Boose|work \t:</strong> You select
+  a single THING that you want to test.\n<strong>Boose|work \t:</strong> And write
+  code to test that THING.\n<strong>eqj^w^ \t:</strong> \\o/\n<strong>Boose|work \t:</strong>
+  There are some guidelines that make this simpler:\n<strong>Boose|work \t:</strong>
+  1. If you find yourself creating and instantiating modules that _aren't_ the module
+  you're testing, you are accidentally writing an integration test.\n<strong>Boose|work
+  \t:</strong> 2. If you accidentally write 'creating and instantiating' as if they
+  were two different things, you will feel FOOLISH.\n<em>plypkie \tsmirks</em>\n<strong>n0ob
+  \t:</strong> [[myclass alloc] init]\n<strong>wildcard0 \t:</strong> 3. You can demonstrate
+  the difference between creating and instantiating in java very easily, though not
+  so much in a lot of other languages\n<strong>Boose|work \t:</strong> 1a. A good
+  way to get around this is to create 'dummy' objects that have properties similar
+  to the ones you would be passing to your Module, but with vastly more simple behavior.
+  In static languages, this involves a lot of magic and interfaces and mocking libraries,
+  like \"RhinoMocks\" or \"Moq\". In dynamic languages, this is as easy as creating
+  an object and duck-typing in whatever you need.\n<strong>Boose|work \t:</strong>
+  4. Frequently, unit tests are arranged as a three-part action.\n<strong>Boose|work
+  \t:</strong> 4a. First, you 'arrange' the test, setting up all of the environment
+  that you need to perform the test properly.\n<strong>Boose|work \t:</strong> 4b.
+  Then, you 'act'- ideally, a single line of code that you are testing.\n<strong>Boose|work
+  \t:</strong> 4c. Finally, you 'assert' - making assertions that check that your
+  action has done exactly what you want it to have done.\n<strong>Boose|work \t:</strong>
+  And finally, UNIT TESTING FRAMEWORKS.\n<strong>Boose|work \t:</strong> What has
+  been described is a single 'unit test'. Often, when you are writing a system, you
+  will produce dozens, hundreds, thousands of these.\n<strong>Boose|work \t:</strong>
+  Our product is at 5400, ATM.\n<strong>Boose|work \t:</strong> .... ANYHOO, unit
+  testing frameworks are just organizational tools allowing you to produce many unit
+  tests and run them on demand. In most organizations that take unit testing seriously,
+  checking in code without it first passing _every unit test_ earns you Shame and
+  Reprisal.\n<strong>plypkie \t:</strong> Boose|work: thanks, i enjoyed your summary\n<strong>Boose|work
+  \t:</strong> Actually, there is a good picture of our office's Shame And Reprisal
+  Hat Tower that I shall now post.\n<em>Boose|work \tgoes link-fishing</em>\n<strong>Boose|work
+  \t:</strong> <a href=\"http://curtis.lassam.net/images/work/broken_build.jpg\">http://a4.sphotos.ak.fbcdn.net/hphotos-ak-ash4/s320x320/426326_101505210450</a>...\n<strong>Boose|work
+  \t:</strong> WE TAKE OUR HAT TOWERS SERIOUSLY IN THIS HERE TOWN \n\n</pre>"

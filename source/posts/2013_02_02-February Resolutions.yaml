@@ -1,0 +1,66 @@
+--- 
+content_type: markdown
+title: "February Resolutions" 
+visible: true
+created: "2013-02-03T18:30:00-07:00"
+categories: ["Misc"]
+content: |
+  This year, I'm doing month-resolutions.
+  Have to check in on those goals every month!
+
+  ### How'd You Do? ###
+
+  - *1000 Pushups* - I'm up to 60. Gotta pick up the pace!
+  - *Rhyme* - I've managed to make an evolutionary algorithm that
+    adds 2 numbers together inaccurately, some of the time. Hum. 
+  - *Return To Cabin* - The date's booked. Just have to let the bossman
+    know about my vacation hours. 
+  - *Indie Street Cred* - Tiny mans are moving on a little grid. 
+  
+  So, for January, I had "We'll All Drone On" and "Drone Drone" - 
+  draw a new Cube Drone comic and launch a new Cube Drone video.
+  I actually got 4 comics done, 
+  [one](http://cube-drone.com/post/2013_01_04-Cube_Drone_13_Hello_Sysadmin.html),
+  [two](http://cube-drone.com/post/2013_01_07-Cube_Drone_14_Warbeard_The_Frothy.html),
+  [three](http://cube-drone.com/post/2013_01_18-Cube_Drone_15_Tools.html),
+  [four](http://cube-drone.com/post/2013_01_25-Cube_Drone_16_Forever_Project.html),
+  and I finished a [Cube Drone short](http://cube-drone.com/post/2013_02_02-Cube_Drone__Source_Control.html), 
+  although it stretched a day into February. I'll let that slide.
+
+  While I was at it, I built a website for just my comics - 
+  [cube-drone.com](http://cube-drone.com/index.html). It uses the same
+  engine and blog repository as the rest of my blog, so I only ever 
+  have to post in one place - if I include the "Cube Drone" tag in a blog
+  item, it'll automatically cross-post it to cube-drone.com. Nice. 
+  
+  So, I successfully passed both resolutions! Which means I have to pick
+  harder ones for next month. 
+  
+  ### Anything Else? ###
+  I learned how to use [meteor.js](http://meteor.com/) by building an 
+  implementation of the
+  [autofocus productivity system](http://ottofocus.meteor.com/) in a day,
+  and launching it as an app. It's on [github](https://github.com/classam/ottofocus).
+  And it all fits into about 600 lines of code.
+
+  The funny thing is, I despise gimmicky productivity systems. Probably 
+  won't ever use it. Just wanted to build it. 
+  
+  I learned how to use [Bootstrap CSS](http://twitter.github.com/bootstrap/),
+  on both ottofocus.meteor.com and cube-drone.com. 
+  I like that it makes a minimalist, usable website right 
+  out-of-the-box with very, very little added CSS.  My only problem with
+  Bootstrap is that ; from now on, every single side-project I do is going
+  to look very, very samey - because, once I have something running, I
+  usually have trouble finding the motivation to try to make it pretty. 
+
+  ### February ###
+  
+  Febresolutions! 
+
+  - *Fake It* - Post a new comic every Monday and Wednesday. 
+  - *Plan A* - Plan a short vacation. 
+  - *Tasty Pie* - Learn django's REST libraries. 
+  - *Pack the Hlanet* - Build another ridiculous little thing. 
+  - *Short* - Write a short story. Show nobody. 
+
