@@ -80,20 +80,20 @@ gulp.task('concatenate_master', ['compile_config', 'compile_index', 'compile_cat
 });
 
 gulp.task('sass', function(){
-    gulp.src('./source/theme/scss/*.scss')
+    return gulp.src('./source/theme/scss/*.scss')
         .pipe(sass())
         .pipe(concat('sass_bundle.css'))
         .pipe(gulp.dest('./target/css/'))
 });
 
 gulp.task('css', function(){
-    gulp.src('./source/theme/css/*.css')
+    return gulp.src('./source/theme/css/*.css')
         .pipe(concat('css_bundle.css'))
         .pipe(gulp.dest('./target/css/'))
 });
 
 gulp.task('images', function(){
-    gulp.src('./source/theme/images/*')
+    return gulp.src('./source/theme/images/*')
         .pipe(gulp.dest('./target/images/'))
 });
 
@@ -104,8 +104,8 @@ gulp.task('pages', function(){
         .pipe(gulp.dest('./target/partials/'))
 });
 
-gulp.task('partials', ['concatenate_master', 'pages', 'sass', 'css', 'images'], function(){
-    return gulp.src('./target/json/master.json')
+gulp.task('partials', ['concatenate_master', 'pages', 'sass', 'css', 'images'], function(cb){
+    gulp.src('./target/json/master.json')
         .pipe(jsonEditor(function(json){
             gulp.src('./source/theme/partials/*.handlebars')
             .pipe(print())
@@ -118,6 +118,8 @@ gulp.task('partials', ['concatenate_master', 'pages', 'sass', 'css', 'images'], 
                 }
             }))
             .pipe(gulp.dest('./target/partials/'))
+            .on('end', cb)
+            
             return json;
         }))
 });
