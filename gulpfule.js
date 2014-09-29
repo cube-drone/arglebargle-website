@@ -8,7 +8,7 @@ var removeEmptyLines = require('gulp-remove-empty-lines');
 var plumber = require('gulp-plumber');
 var jsonEditor = require('gulp-json-editor');
 var jsonCombine = require('gulp-jsoncombine');
-var argyle = require('./argyle');
+var arglebargle = require('arglebargle');
 var del = require('del');
 var rename = require('gulp-rename');
 var ignore = require('gulp-ignore');
@@ -29,9 +29,9 @@ gulp.task('compile_posts', function(cb){
         .pipe(stripBom())
         .pipe(plumber())
         .pipe(yml())
-        .pipe(argyle.appendFileinfo())
-        .pipe(argyle.tidyInput())
-        .pipe(argyle.render())
+        .pipe(arglebargle.appendFileinfo())
+        .pipe(arglebargle.tidyInput())
+        .pipe(arglebargle.render())
         .pipe(gulp.dest('./target/json/posts'));
 });
 
@@ -53,14 +53,14 @@ gulp.task('compile_config', function(){
 
 gulp.task('compile_index', ['concatenate_posts'], function(){
     return gulp.src('./target/json/posts.json')
-        .pipe(argyle.buildIndex())
+        .pipe(arglebargle.buildIndex())
         .pipe(rename("index.json"))
         .pipe(gulp.dest('./target/json/'));
 });
 
 gulp.task('compile_categories', ['concatenate_posts'], function(){
     return gulp.src('./target/json/posts.json')
-        .pipe(argyle.buildCategories())
+        .pipe(arglebargle.buildCategories())
         .pipe(rename("categories.json"))
         .pipe(gulp.dest('target/json/'));
 });
@@ -127,7 +127,7 @@ gulp.task('pages_html', ['partials'], function(){
         .pipe(jsonEditor(function(master){
             gulp.src('target/json/posts/*.json')
                 .pipe(jsonEditor(function(post){
-                    var post = argyle.addMetadataToPost(post, master);
+                    var post = arglebargle.addMetadataToPost(post, master);
                     gulp.src('source/theme/single.handlebars')
                         .pipe(handlebars(post, {
                             'batch':['./target/partials'],
@@ -146,7 +146,7 @@ gulp.task('rss', ['concatenate_master'], function(){
     return gulp.src('target/json/master.json')
         .pipe(jsonEditor(function(master){
             gulp.src('source/theme/rss.handlebars')
-                .pipe(handlebars(argyle.addMetadataToMaster(master), {
+                .pipe(handlebars(arglebargle.addMetadataToMaster(master), {
                     'helpers': handlebarsHelpers, 
                 }))
                 .pipe(rename("rss.xml"))
@@ -160,7 +160,7 @@ gulp.task('index_html', ['partials'], function(){
     return gulp.src('target/json/master.json')
         .pipe(jsonEditor(function(master){
             gulp.src('source/theme/index.handlebars')
-                .pipe(handlebars(argyle.addMetadataToMaster(master), {
+                .pipe(handlebars(arglebargle.addMetadataToMaster(master), {
                     'batch':['./target/partials'],
                     'helpers': handlebarsHelpers, 
                 }))
@@ -180,7 +180,7 @@ gulp.task('other_pages', ['partials'], function(){
                             file.path.indexOf("single.handlebars") > -1 ||
                             file.path.indexOf("rss.handlebars") > -1);
                 }))
-                .pipe(handlebars(argyle.addMetadataToMaster(master), {
+                .pipe(handlebars(arglebargle.addMetadataToMaster(master), {
                     'batch':['./target/partials'],
                     'helpers': handlebarsHelpers, 
                 }))
