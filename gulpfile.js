@@ -97,7 +97,8 @@ gulp.task('concatenate_master', ['compile_config', 'compile_index', 'compile_cat
 
 gulp.task('sass', function(){
     return gulp.src('./source/theme/scss/*.scss')
-        .pipe(sass({require:['susy']}))
+        .pipe(plumber())
+        .pipe(sass({require:['susy', 'breakpoint']}))
         .pipe(gulp.dest('./target/css/'))
 });
 
@@ -210,4 +211,16 @@ gulp.task('other_pages', ['partials'], function(){
 });
 
 gulp.task('default', ['index_html', 'pages_html', 'other_pages', 'rss'], function(){
+});
+
+gulp.task('watch', function(){
+    gulp.watch("./source/theme/scss/*", ['sass'])
+    gulp.watch("./source/theme/css/*", ['css'])
+    gulp.watch("./source/theme/images/*", ['images'])
+    gulp.watch("./source/theme/*.handlebars", ['default'])
+    gulp.watch("./source/theme/partials/*", ['default'])
+    gulp.watch("./source/posts/*", ['default'])
+    gulp.watch("./source/pages/*", ['default'])
+    gulp.watch("./source/pages/config.yaml", ['default'])
+    gulp.watch("./README.md", ['default'])
 });
