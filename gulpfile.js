@@ -1,4 +1,12 @@
+/*
+Hey! Welcome to the gulpfile. Here's the bit you'll have to work with
+if you want to modify how your site is compiled. 
+*/
 
+/*
+These are dependencies. They're also listed in package.json, which
+automatically installs them when you type in `npm install`
+*/
 var gulp = require('gulp');
 var _ = require('lodash');
 var yml = require('gulp-yml');
@@ -8,7 +16,6 @@ var removeEmptyLines = require('gulp-remove-empty-lines');
 var plumber = require('gulp-plumber');
 var jsonEditor = require('gulp-json-editor');
 var jsonCombine = require('gulp-jsoncombine');
-var arglebargle = require('arglebargle');
 var del = require('del');
 var rename = require('gulp-rename');
 var ignore = require('gulp-ignore');
@@ -18,10 +25,19 @@ var sass = require('gulp-ruby-sass');
 var concat = require('gulp-concat');
 var markdown = require('gulp-markdown');
 
+/* This dependency is special. It powers all of the bits
+that I couldn't build with off-the-shelf parts. */
+var arglebargle = require('arglebargle');
+
+/* Type `gulp clean` to delete the target directory */
 gulp.task('clean', function(){
     del('target'); 
 });
 
+/* Convert the yaml posts into JSON, then render them. 
+    This is an intermediary stage - these JSON files
+    aren't part of the final output. 
+*/
 gulp.task('compile_posts', function(cb){
     return gulp.src('./source/posts/*.yaml')
         .pipe(print())
@@ -116,6 +132,7 @@ gulp.task('partials', ['concatenate_master', 'pages', 'sass', 'css', 'images'], 
                     'js': "<script src='js/bundle.js'></script>"
                 }
             }))
+            .pipe(rename({extname:'.html'}))
             .pipe(gulp.dest('./target/partials/'))
             .on('end', cb)
             

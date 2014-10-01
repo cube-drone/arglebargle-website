@@ -1,6 +1,3 @@
-arglebargle-website
-===================
-
 Arglebargle is a static website compiler - like jekyll - but much harder 
 to use.  It leans really heavily on gulp, as well as YAML, Handlebars, Markdown, and SASS, 
 although if you don't mind futzing with the gulpfile you can swap out any of those 
@@ -57,26 +54,28 @@ Currently, most of this is defined by convention, in the 'source' directory.
 
 The structure works like this: 
 
-* _source/config.yaml_ - global variables, like "site name"
-* _source/pages_ - blocks of Markdown content that can be rendered into the site
-* _source/posts_ - YAML files corresponding with blog posts
-* _source/theme_ - a bunch of stuff describing how your site will look
-* _source/theme/index.handlebars_ - a Handlebars file describing how your index.html page will look.
-* _source/theme/single.handlebars_ - a Handlebars file describing how individual posts will be rendered.
-* _source/theme/rss.handlebars_ - a Handlebars file describing how your RSS will render. You don't need to touch this, pretty much at all.
-* _source/theme/anythingelse.handlebars_ - any files that aren't index, single, or RSS will compile into html files that you can link to. 
-* _source/theme/partials_ - Handlebars files that render before any of the other content. You can reference them in your main Handlebars files. 
-* _source/theme/scss_ - Sassy CSS.
+* `source/config.yaml` - global variables, like "site name"
+* `source/pages` - blocks of Markdown content that can be rendered into the site
+* `source/posts` - YAML files corresponding with blog posts
+* `source/theme` - a bunch of stuff describing how your site will look
+* `source/theme/index.handlebars` - a Handlebars file describing how your index.html page will look.
+* `source/theme/single.handlebars` - a Handlebars file describing how individual posts will be rendered.
+* `source/theme/rss.handlebars` - a Handlebars file describing how your RSS will render. You don't need to touch this, pretty much at all.
+* `source/theme/anythingelse.handlebars` - any files that aren't index, single, or RSS will compile into html files that you can link to. 
+* `source/theme/partials` - Handlebars files that render before any of the other content. You can reference them in your main Handlebars files. 
+* `source/theme/scss` - Sassy CSS.
 
 ### config.yaml
 
 You can access any config.yaml property in your handlebars templates, like so:
 
-    /source/config.yaml
+#### /source/config.yaml
+    
     title: "Awesome Website"
 
-    /source/theme/partials/header.handlebars
-    <h2>{{config.title}}</h2>
+#### /source/theme/partials/header.handlebars
+    
+    <h2>\{{config.title}}</h2>
 
 ### pages
 
@@ -89,12 +88,14 @@ referenced by partials, and they cannot have the same name as a partial.
 As an example, `about.md` in pages renders into the `about.html` partial, which
 can then be insered into a page as follows:
 
-    /source/about.md
+#### /source/about.md
+    
     Markdown text!
 
-    /source/theme/about.handlebars
+#### /source/theme/about.handlebars
+    
     <h2> About </h2>
-    {{> partials/about }}
+    \{{> partials/about }}
 
 You'll notice that pages themselves do not get rendered into complete HTML pages. 
 
@@ -106,12 +107,12 @@ A post is a blog-style post, as a .yaml file.
 
 The mandatory fields are:
 
- * _title_ - the title of the blog post
- * _created_ - the time that the blog post was created. 
+ * `title` - the title of the blog post
+ * `created` - the time that the blog post was created. 
      this is parsed by moment.js, so any time that moment.js can parse should be fine, although
      I have a marked preference for ISO-8601 dates. 
- * _categories_ - a list of the categories that this post falls under
- * _content-type_ - how to render the content of this post
+ * `categories` - a list of the categories that this post falls under
+ * `content-type` - how to render the content of this post
 
 The content types that are built into the system are `youtube`, `image`, `html`, 
 `markdown`, and `irc`.
@@ -123,7 +124,7 @@ Renderers are super-easy to write, but I'll cover that later in the documentatio
 
 Posts also have optional properties: 
 
- * _visible_ - whether or not to render the blog post. Defaults to 'true'.
+ * `visible` - whether or not to render the blog post. Defaults to 'true'.
 
 #### renderers
 
@@ -174,6 +175,8 @@ This renderer also checks the 'alt-text' property, and will preserve it if prese
     content-type: image
     image: 'http://curtis.lassam.net/comics/cube_drone/great_art_time/1.gif'
     alt-text: 'marquee king'
+
+Or multiple images:
 
     title: 'Gallery Post'
     created: '2014-06-11T12:00:00+07:00'
@@ -235,8 +238,8 @@ When rendering a Post object in Handlebars, it has the following properties:
  
  * `title` - this Post's title.
  * `html` - whatever the Renderers have decided is the html content of this Post. If you want it to display properly, 
-        you'll have to wrap it in triple-moustaches in Handlebars - `{{{html}}}` - otherwise Handlebars will 
-        automatically escape it for you. 
+  you'll have to wrap it in triple-moustaches in Handlebars - `\{{{html}}}` - otherwise Handlebars will 
+  automatically escape it for you. 
  * `human_datetime` - a human readable date and time.
  * `human_date` - a human-readable date.
  * `human_time` - a human-readable time.  
@@ -258,10 +261,10 @@ A Handlebars file, which describes what the front page of your website will look
 
 This file has access to the following variables: 
 
- * _index_, a reverse-chronologically ordered array of Post objects, from most to least recent. 
- * _first_, the first Post object that exists. 
- * _last_, the last Post object that exists. 
- * _categories_, an object, where each key is the name of a category ("Videos"), and each value is the chronologically ordered 
+ * `index`, a reverse-chronologically ordered array of Post objects, from most to least recent. 
+ * `first`, the first Post object that exists. 
+ * `last`, the last Post object that exists. 
+ * `categories`, an object, where each key is the name of a category ("Videos"), and each value is the chronologically ordered 
     list of Posts in that category. 
 
 #### rss.handlebars
@@ -275,7 +278,20 @@ So, if you have `about.handlebars`, it will be converted into `about.html`, whic
 
 #### partials ####
 Any handlebars file in the `/source/theme/partials` directory will be given 
+the same variables as `index.handlebars` and made available to the 
+main Handlebars files.
 
 #### SCSS ####
+Things in the `/source/theme/scss` directory will be compiled with ruby-sass
+into css files in `/target/css/`.
 
+#### Images ####
+Things in the `/source/theme/images` directory will be moved to `/target/images`.
 
+The Gulpfile
+------------
+
+The gulpfile contains all of the steps in the compilation of the application.
+I've done my best to fill it with documentation, so if you want to 
+learn how to modify the application to add your own features or functionality,
+that would be a great place to start. 

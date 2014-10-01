@@ -1,7 +1,14 @@
 @import "susy";
 
 body{
-    @include container(960px);
+    background-color: #333;
+}
+
+.content{
+    @include container(1000px);
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 h1 a{
