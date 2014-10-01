@@ -1,6 +1,10 @@
+@import "susy";
+
 body{
-    width: 960px;
-    margin: auto;
-    padding: 10px;
-    text-align: center;
+    @include container(960px);
+}
+
+h1 a{
+    color: #333;
+    text-decoration: none;
 }

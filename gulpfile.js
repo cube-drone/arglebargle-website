@@ -14,7 +14,7 @@ var rename = require('gulp-rename');
 var ignore = require('gulp-ignore');
 var handlebars = require('gulp-compile-handlebars');
 var handlebarsHelpers = require('diy-handlebars-helpers');
-var sass = require('gulp-sass');
+var sass = require('gulp-ruby-sass');
 var concat = require('gulp-concat');
 var markdown = require('gulp-markdown');
 
@@ -81,8 +81,7 @@ gulp.task('concatenate_master', ['compile_config', 'compile_index', 'compile_cat
 
 gulp.task('sass', function(){
     return gulp.src('./source/theme/scss/*.scss')
-        .pipe(sass())
-        .pipe(concat('sass_bundle.css'))
+        .pipe(sass({require:['susy']}))
         .pipe(gulp.dest('./target/css/'))
 });
 
@@ -112,7 +111,7 @@ gulp.task('partials', ['concatenate_master', 'pages', 'sass', 'css', 'images'], 
             .pipe(handlebars(json, {
                 'helpers': handlebarsHelpers,
                 'partials': {
-                    'css': "<link rel='stylesheet' href='css/sass_bundle.css'>\n"+
+                    'css': "<link rel='stylesheet' href='css/minimal.css'>\n"+
                            "<link rel='stylesheet' href='css/css_bundle.css'>",
                     'js': "<script src='js/bundle.js'></script>"
                 }
