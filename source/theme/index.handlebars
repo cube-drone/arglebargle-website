@@ -2,6 +2,8 @@
 
 <a href="about.html">About</a>
 
+{{> partials/README }}
+
 <ul>
 {{#each-limit index 1}}
 <li class='special post'><a href="{{this.id}}.html">{{this.title}}</a> - {{this.human_date}} - {{{this.html}}}</li>

@@ -98,7 +98,7 @@ gulp.task('images', function(){
 
 
 gulp.task('pages', function(){
-    return gulp.src('./source/pages/*.md')
+    return gulp.src(['./source/pages/*.md', './README.md'])
         .pipe(markdown())
         .pipe(gulp.dest('./target/partials/'))
 });
