@@ -1,17 +1,86 @@
 @import "susy";
+@import "breakpoint";
+
+$phone: 740px;
+
+$susy: (
+    columns: 6,
+);
+
+*{ margin:0;padding:0}
 
 body{
-    background-color: #333;
+    background: url('../images/skulls.png') repeat;
+    padding: 0;
+    margin: 0;
+    font-family: "Raleway", Helvetica, Arial, sans-serif;
 }
 
 .content{
-    @include container(1000px);
+    @include container(960px);
     background-color: white;
+    padding-top: 0;
+    margin-top: 0;
     padding-left: 10px;
     padding-right: 10px;
+    opacity: 0.9;
+    border-left: 1px solid #888;
+    border-right: 1px solid #888;
 }
 
-h1 a{
-    color: #333;
-    text-decoration: none;
+h1{
+    @include breakpoint($phone){
+        @include span(3);
+    }
+    height: 90px;
+    font-size: 60px;
+    margin-top: 0;
+    padding-top: 10px;
+    position: relative;
+
+    a {
+        color: #333;
+        text-decoration: none;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom: 5px solid white;
+    }
+    a:hover{
+        color: black;
+        border-bottom: 5px solid black;
+        border-radius: 10px;
+    }
+}
+
+.nav{
+    height: 50px;
+    @include breakpoint($phone){
+        @include span(last 3);
+        height: 100px;
+    }
+    position: relative;
+    position: relative;
+    ul {
+        position: absolute;
+        bottom: 17px;
+        left: 0;
+        li{
+            display: block;
+            float: left;
+            font-weight: 700;
+            padding-left: 15px;
+            a{
+                color: #333;
+                text-decoration: none;
+                border-bottom: 5px solid white;
+                padding-bottom: 12px;
+            }
+            a:hover{
+                color: black;
+                border-bottom: 5px solid black;
+                border-radius: 8px;
+            }
+        }
+    }
 }

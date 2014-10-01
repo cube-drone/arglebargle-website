@@ -28,10 +28,11 @@ and unpack it in a directory on your computer.
 Open the git terminal, and navigate to the folder containing 
 all of the code you just unpacked.
 
-Install the 'sass' and 'susy' gems. 
+Install the 'sass', 'susy', and 'breakpoint' gems. 
 
     > gem install sass
     > gem install susy
+    > gem install breakpoint
 
 Install all of the node dependencies.
 

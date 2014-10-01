@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,200,700' rel='stylesheet' type='text/css'>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
     {{> css }}
     <title>{{config.title}}</title>
 </head>
@@ -8,6 +11,10 @@
     <div class='content'>
     <h1><a href='index.html'>{{config.title}}</a></h1>
     <div class='nav'>
-        <a class='nav-item' href="readme.html">Documentation</a>
-        <a class='nav-item' href="about.html">Curtis</a>
+        <ul>
+            <li><a class='nav-item' href="readme.html"><i class='fa fa-lightbulb-o'></i> Docs</a></li>
+            <li><a class='nav-item' href="about.html"><i class='fa fa-user'></i> Curtis</a></li>
+            <li><a class='nav-item' href="https://github.com/classam/arglebargle-website">
+                <i class='fa fa-github'></i> Fork me on GitHub</a></li>
+        </ul>
     </div>
