@@ -1,3 +1,5 @@
+<!-- toc -->
+
 Arglebargle is a static website compiler - like jekyll - but much harder 
 to use.  It leans really heavily on gulp, as well as YAML, Handlebars, Markdown, and SASS, 
 although if you don't mind futzing with the gulpfile you can swap out any of those 

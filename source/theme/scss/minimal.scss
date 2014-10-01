@@ -7,9 +7,8 @@ $susy: (
     columns: 6,
 );
 
-*{ margin:0;padding:0}
-
 body{
+    margin-top: -5px;
     background: url('../images/skulls.png') repeat;
     padding: 0;
     margin: 0;
@@ -17,10 +16,10 @@ body{
 }
 
 .content{
+    margin-top: -5px;
     @include container(960px);
     background-color: white;
     padding-top: 0;
-    margin-top: 0;
     padding-left: 10px;
     padding-right: 10px;
     opacity: 0.9;
@@ -54,6 +53,8 @@ h1{
 }
 
 .nav{
+    margin: 0;
+    padding: 0;
     height: 50px;
     @include breakpoint($phone){
         @include span(last 3);
@@ -62,6 +63,8 @@ h1{
     position: relative;
     position: relative;
     ul {
+        margin: 0;
+        padding: 0;
         position: absolute;
         bottom: 17px;
         left: 0;
@@ -83,4 +86,27 @@ h1{
             }
         }
     }
+}
+
+.intro{
+    font-size: large;
+    @include span(6);
+    padding: 15px;
+    background-color: #CCC;
+    border: 1px solid #888;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px #777;
+    margin-bottom: 20px;
+    ul{
+        margin-left: 17px;
+        margin-top: 3px;
+    }
+    a{
+        font-weight: 700;
+    }
+}
+
+.inner{
+    @include span(6);
+
 }

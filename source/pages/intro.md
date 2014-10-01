@@ -7,3 +7,5 @@ Arglebargle is a website compiler, powered by:
  * [Susy](http://susy.oddbird.net/) the SASSiest grid implementation,
  * [Breakpoint](http://breakpoint-sass.com/) for responsive design,
  * and [Viewers Like You](http://tvtropes.org/pmwiki/pmwiki.php/Main/ViewersLikeYou)!
+
+You can get started by reading the [documentation](readme.html). 

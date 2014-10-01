@@ -24,6 +24,7 @@ var handlebarsHelpers = require('diy-handlebars-helpers');
 var sass = require('gulp-ruby-sass');
 var concat = require('gulp-concat');
 var markdown = require('gulp-markdown');
+var toc = require('gulp-toc');
 
 /* This dependency is special. It powers all of the bits
 that I couldn't build with off-the-shelf parts. */
@@ -117,6 +118,7 @@ gulp.task('images', function(){
 gulp.task('pages', function(){
     return gulp.src(['./source/pages/*.md', './README.md'])
         .pipe(markdown())
+        .pipe(toc())
         .pipe(gulp.dest('./target/partials/'))
 });
 
@@ -141,7 +143,7 @@ gulp.task('partials', ['concatenate_master', 'pages', 'sass', 'css', 'images'], 
         }))
 });
 
-gulp.task('pages_html', ['partials'], function(){
+gulp.task('posts_html', ['partials'], function(){
     return gulp.src('target/json/master.json')
         .pipe(jsonEditor(function(master){
             gulp.src('target/json/posts/*.json')
@@ -210,7 +212,7 @@ gulp.task('other_pages', ['partials'], function(){
         }));
 });
 
-gulp.task('default', ['index_html', 'pages_html', 'other_pages', 'rss'], function(){
+gulp.task('default', ['index_html', 'posts_html', 'other_pages', 'rss'], function(){
 });
 
 gulp.task('watch', function(){
