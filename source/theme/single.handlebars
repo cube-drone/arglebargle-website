@@ -1,36 +1,40 @@
 {{> partials/header }}
 
-<nav class='main fpnl'>
-    <a href="{{first.id}}.html">First</a>
+<nav class='fpnl'>
+    <a class='first' href="{{first.id}}.html">First</a>
     {{# if previous }}
-        <a href="{{previous.id}}.html">Previous</a>
+        <a class='previous' href="{{previous.id}}.html">Previous</a>
     {{/if}}
     {{# if next }}
-    <a href="{{next.id}}.html">Next</a>
+        <a class='next' href="{{next.id}}.html">Next</a>
     {{/if}}
-    <a href="{{last.id}}.html">Last</a>
+    <a class='last' href="{{last.id}}.html">Last</a>
 </nav>
-
-{{# each category_items }}
-    <nav class='category fpnl'>
-    <strong>{{this.name}}</strong>
-    <a href="{{this.first.id}}.html">First</a>
-    {{# if this.previous }}
-        <a href="{{this.previous.id}}.html">Previous</a>
-    {{/if}}
-    {{# if this.next }}
-    <a href="{{this.next.id}}.html">Next</a>
-    {{/if}}
-    <a href="{{this.last.id}}.html">Last</a>
-{{/each}}
 
 <section class='post'>
     <h2>{{title}}</h2>
     <h3 class='created'>{{human_datetime}}</h3>
 
+    <div class='post_content'>
     {{{html}}}
+    </div>
 
 </section>
+
+{{# each category_items }}
+    <h3 class='category_title'>Category: {{this.name}}</h3>
+    <nav class='fpnl'>
+        <a class='first' href="{{this.first.id}}.html">First</a>
+        {{# if this.previous }}
+            <a class='previous' href="{{this.previous.id}}.html">{{# if this.previous}} Previous {{/if}}</a>
+        {{/if}}
+        {{# if this.next }}
+            <a class='next' href="{{this.next.id}}.html">Next</a>
+        {{/if}}
+        <a class='last' href="{{this.last.id}}.html">Last</a>
+    </nav>
+{{/each}}
+
 
 {{> partials/footer }}
 

@@ -202,7 +202,8 @@ This one is ... painfully specific, the copy-and-paste format of my favourite IR
     irc: |
       <eqj^w^> boy I love being given someone else's half-done project and told to finish it :|
       <eqj^w^> gosh jolly
-      <eqj^w^> and if that wasn't enough it sure is even better when I'm the one that has to tell them I'm taking over
+      <eqj^w^> and if that wasn't enough it sure is even better when I'm the one that 
+      <eqj^w^> has to tell them I'm taking over
       <eqj^w^> hey buddy pal that thing you've been doing for a week? yeah just stop.
       <cube_drone_> That's not the right way to do it. 
       <eqj^w^> it sucks so bad they're making me finish it
@@ -210,23 +211,21 @@ This one is ... painfully specific, the copy-and-paste format of my favourite IR
       <cube_drone_> 1. Buy combat boots
       <eqj^w^> ok I like it already, go on
       <tooth> implying she doesn't have them already
-      <cube_drone_> 2. Kick down their door. If they don't have one, because they're at a cubicle, go to a hardware store, 
+      <cube_drone_> 2. Kick down their door. If they don't have one, because they're at a cubicle,
+      <cube_drone_> go to a hardware store, 
       <cube_drone_> buy one, and prop it up on their cubicle, then kick it down
       <eqj^w^> what if they're in ontario?
       <eqj^w^> AND in a cubicle
       <eqj^w^> ain't no one wants to go there
       <eqj^w^> but tooth is closest
       <cube_drone_> Buy the door, then record yourself kicking it down with a webcam, 
-      <cube_drone_> then convert the movie into an animated gif, then print out the animated gif frame by frame on individual sheets of paper 
+      <cube_drone_> then convert the movie into an animated gif, then print out the animated gif
+      <cube_drone_> frame by frame on individual sheets of paper 
       <cube_drone_> and mail it to them using high priority overnight mail. 
       <eqj^w^> hahahaha
       <cube_drone_> On the last page, scrawl "YOUR PROJECT IS MINE. ALSO I NEED YOUR CLOTHES."
       <eqj^w^> \o/
       <cube_drone_> Then include, as the last picture, Arnold Schwarzenegger as the Terminator, naked. 
-      <cube_drone_> http://www.replikultes.net/medias/uploads/films/terminator_2/terminator2_03_vetements_bottes_moto.jpg
-      <eqj^w^> I am so not clicking on that
-      <cube_drone_> It's from-the-chest up, but still a pretty good call
-      <cube_drone_> That's... that's actually all of the steps.
 
 ### theme
 The theme folder contains the files that determine how the site's gonna look!

@@ -1,0 +1,10 @@
+--- 
+content-type: image
+title: "Multiple Images" 
+created: "2014-07-10T12:55:00-07:00"
+visible: true
+categories: ["Example"]
+image: 
+ - "http://curtis.lassam.net/comics/cube_drone/southern.gif"
+ - "http://curtis.lassam.net/comics/cube_drone/great_art_time/2.gif"
+alt-text: "The same alt-text for all images. Should fix this."

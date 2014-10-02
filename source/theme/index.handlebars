@@ -4,25 +4,26 @@
 {{> partials/intro }}
 </div>
 
-<ul>
-{{#each-limit index 1}}
-<li class='special post'><a href="{{this.id}}.html">{{this.title}}</a> - {{this.human_date}} - {{{this.html}}}</li>
+<ul class='index'>
+{{#each-limit index 3}}
+<li class='special post'>
+    <h2><a href="{{this.id}}.html">{{this.title}}</a></h2> 
+    <h3>{{this.human_date}}</h3>
+    <div class='post_content'>
+    {{{this.html}}}
+    </div>
+    </li>
 {{/each-limit}}
 </ul>
 
-<ul>
+<ul class='full-index'>
 {{#each index}}
-<li class='post'><a href="{{this.id}}.html">{{this.title}}</a> - {{this.human_date}}</li>
+<li class='special post'>
+    <h2><a href="{{this.id}}.html">{{this.title}}</a></h2> 
+    <h3>{{this.human_date}}</h3>
+</li>
 {{/each}}
 </ul>
 
-{{#each-key categories }}
-    <h2 id="{{this.key}}">{{this.key}}</h2>
-    <ul>
-        {{#each this.value}}
-            <li class='post'><a href="{{this.id}}.html">{{this.title}}</a></li>
-        {{/each}}
-    </ul>
-{{/each-key}}
 
 {{> partials/footer }}

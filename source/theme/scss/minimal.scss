@@ -8,7 +8,6 @@ $susy: (
 );
 
 body{
-    margin-top: -5px;
     background: url('../images/skulls.png') repeat;
     padding: 0;
     margin: 0;
@@ -16,8 +15,10 @@ body{
 }
 
 .content{
-    margin-top: -5px;
-    @include container(960px);
+    margin-top: -20px;
+    margin-bottom: -20px;
+    padding-bottom: 40px;
+    @include container(1020px);
     background-color: white;
     padding-top: 0;
     padding-left: 10px;
@@ -25,11 +26,12 @@ body{
     opacity: 0.9;
     border-left: 1px solid #888;
     border-right: 1px solid #888;
+    border-bottom: 1px solid #888;
 }
 
 h1{
     @include breakpoint($phone){
-        @include span(3);
+        @include span(3 of 6);
     }
     height: 90px;
     font-size: 60px;
@@ -57,7 +59,7 @@ h1{
     padding: 0;
     height: 50px;
     @include breakpoint($phone){
-        @include span(last 3);
+        @include span(last 3 of 6);
         height: 100px;
     }
     position: relative;
@@ -90,7 +92,7 @@ h1{
 
 .intro{
     font-size: large;
-    @include span(6);
+    @include span(100%);
     padding: 15px;
     background-color: #CCC;
     border: 1px solid #888;
@@ -106,7 +108,131 @@ h1{
     }
 }
 
-.inner{
-    @include span(6);
+code{
+    font-family: Inconsolata, monospace;
+    font-weight: 700;
+}
 
+.inner{
+    @include span(100%);
+    
+    pre {
+        font-size: large;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: #333;
+        color: white;
+    }
+
+    .index {
+        padding-left: 0;
+    }
+
+    .post {
+        list-style-type: none;
+        display: block;
+        h2{
+            @include breakpoint($phone){
+                @include span(4 of 6);
+            }
+            margin-bottom: 25px;
+            a{
+                color: #333;
+                text-decoration: none;
+            }
+        }
+        h3{
+            @include breakpoint($phone){
+                @include span(last 2 of 6);
+            }
+            margin-bottom: 28px;
+            font-weight: 200;
+            padding-top: 5px;
+        }
+    }
+
+    .irc{
+        font-family: Inconsolata, monospace;
+        li{
+            list-style-type: none;
+        }
+        .name{
+            display: block;
+            float: left;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            background-color: #AAA;
+        }
+    }
+}
+
+.post_content{
+    @include span(100%);
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #888;
+    margin-bottom: 20px;
+    min-height: 200px;
+}
+
+.category_title{
+    @include span(100%);
+}
+
+.fpnl{
+    @include span(100%);
+    margin-bottom: 15px;
+    .first{
+        text-align: center;
+        @include span(1 of 6);
+    }
+    .previous{
+        text-align: center;
+        @include span(1 of 6);
+    }
+    .next{
+        text-align: center;
+        @include span(1 of 6);
+    }
+    .last{
+        text-align: center;
+        @include span(1 of 6);
+    }
+    a{
+        color: white;
+        font-weight: 700;
+        background: #888;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #666;
+        text-decoration: none;
+    }
+    a:hover{
+        background: #666;
+    }
+}
+
+.footer_separator{
+    @include span(100%);
+    border-top: 10px solid black;
+}
+
+.footer{
+    .category{
+        @include breakpoint($phone){
+            @include span(1 of 6);
+        }
+        ul{
+            padding-left: 2px;
+            li{
+                list-style-type: none;
+                margin-bottom: 5px;
+            }
+        }
+    }
+    .footer_content{
+        @include breakpoint($phone){
+            @include span(last 3 of 6);
+        }
+    }
 }

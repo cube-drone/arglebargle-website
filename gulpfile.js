@@ -42,7 +42,6 @@ gulp.task('clean', function(){
 gulp.task('compile_posts', function(cb){
     return gulp.src('./source/posts/*.yaml')
         .pipe(print())
-        .pipe(removeEmptyLines())
         .pipe(stripBom())
         .pipe(plumber())
         .pipe(yml())

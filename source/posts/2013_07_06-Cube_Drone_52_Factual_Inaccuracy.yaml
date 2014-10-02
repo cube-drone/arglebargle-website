@@ -1,8 +1,0 @@
---- 
-content_type: comic
-title: "Cube Drone 52 - Factual Inaccuracy" 
-created: "2013-07-06T01:35:00-07:00"
-visible: true
-categories: ["Comics", "Cube Drone" ]
-comic: "http://curtis.lassam.net/comics/cube_drone/52.gif"
-alt-text: "I am pretty sure DB2 never actually enforced 16-character column name limits. That would be silly, right? So why are all of the tables in this software so damned vowel-phobic? Does transfer always need to be trnsfr? THE SAVINGS ARE NOT WORTH IT. " 

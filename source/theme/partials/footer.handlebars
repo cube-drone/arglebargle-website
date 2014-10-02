@@ -1,4 +1,23 @@
     </div><!-- inner -->
+    <div class='footer_separator'> </div>
+    <div class='footer'>
+        {{#each-key categories }}
+            <div class='category'>
+            <h2 id="{{this.key}}">{{this.key}}</h2>
+            <ul>
+                {{#each-limit this.value 5}}
+                    <li class='post'><a href="{{this.id}}.html">{{this.title}}</a></li>
+                {{/each-limit}}
+            </ul>
+            </div>
+        {{/each-key}}
+        <div class='footer_content'>
+            <p>Here are a bunch of words that go in the footer. </p>
+
+            <p> Legal legal, legal legal. </p>
+            <p> Copyright doop dorp. </p> 
+        </div>
+    </div>
     </div><!-- content -->
     {{> js}}
 </body>
