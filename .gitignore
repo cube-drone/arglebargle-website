@@ -1,3 +1,4 @@
 node_modules
 .sass-cache
 target
+.DS_Store
