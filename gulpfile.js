@@ -25,6 +25,7 @@ var sass = require('gulp-ruby-sass');
 var concat = require('gulp-concat');
 var markdown = require('gulp-markdown');
 var toc = require('gulp-toc');
+var rsync = require('gulp-rsync');
 
 /* This dependency is special. It powers all of the bits
 that I couldn't build with off-the-shelf parts. */
@@ -224,4 +225,14 @@ gulp.task('watch', function(){
     gulp.watch("./source/pages/*", ['default'])
     gulp.watch("./source/pages/config.yaml", ['default'])
     gulp.watch("./README.md", ['default'])
+});
+
+gulp.task('upload', function(){
+    return gulp.src('./target/*')
+        .pipe(rsync({
+            root: 'target', 
+            hostname: 'classam@lassam.net', 
+            destination: '/home/classam/curtis.lassam.net/arglebargle', 
+            update: true, 
+        }))
 });
