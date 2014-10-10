@@ -40,6 +40,10 @@ Install all of the node dependencies.
 
     > npm install
 
+Install gulp-cli
+
+    > npm install -g gulp
+
 Then, tell gulp to do its thing.
 
     > gulp
