@@ -1,0 +1,139 @@
+--- 
+content_type: markdown
+title: "Authentication for Single Page Applications" 
+visible: true
+created: "2014-01-21T17:00:00-07:00"
+categories: ["Blog"]
+content: |
+  So, I wrote a [Stack Overflow](http://stackoverflow.com/questions/20963273/spa-best-practices-for-authentication-and-session-management/21175036#21175036)
+  answer that I'm almost proud of, and I thought I'd keep it here.
+
+  The question? I'm going to paraphrase, here:
+
+  "Is there a best-practices for authentication of single-page Javascript 
+  applications? Should I keep my own token, or use the session-management 
+  built in to my framework?" 
+
+  My answer? 
+
+  This question has been addressed, in a slightly different form, at length, 
+  in [this StackOverflow answer about RESTful authentication](http://stackoverflow.com/questions/319530/restful-authentication).
+
+  But this addresses it from the server-side. Let's look at this from the client-side. Before we do that, though, there's an important prelude:
+
+  ## Javascript Crypto is Hopeless ##
+
+  [Matasano's article](http://www.matasano.com/articles/javascript-cryptography/)
+  on this is famous, but the lessons contained therein are pretty important:
+
+  To summarize: 
+
+  * A man-in-the-middle attack can trivially replace your crypto code with `<script>
+    function hash_algorithm(password){ lol_nope_send_it_to_me_instead(password); }</script>`
+  * A man-in-the-middle attack is trivial against a page that serves any resource over a non-SSL connection.
+  * Once you have SSL, you're using real crypto anyways.
+
+  And to add a corollary of my own:
+
+  * A successful XSS attack can result in an attacker executing code on your client's browser, even if you're using SSL - so even if you've got every hatch battened down, your browser crypto can still fail if your attacker finds a way to execute any javascript code on someone else's browser. 
+
+  This renders a lot of RESTful authentication schemes impossible or silly if you're intending to use a JavaScript client. Let's look! 
+
+  ## HTTP Basic Auth ##
+
+  First and foremost, HTTP Basic Auth. The simplest of schemes: simply pass a name and password with every request.
+
+  This, of course, absolutely requires SSL, because you're passing a Base64 (reversibly) encoded name and password with every request. Anybody listening on the line could extract username and password trivially. Most of the "Basic Auth is insecure" arguments come from a place of "Basic Auth over HTTP" which is an awful idea. 
+
+  The browser provides baked-in HTTP Basic Auth support, but it is ugly as sin and you probably shouldn't use it for your app. The alternative, though, is to stash username and password in JavaScript.
+
+  This is the most RESTful solution. The server requires no knowledge of state whatsoever and authenticates every individual interaction with the user. Some REST enthusiasts (mostly strawmen) insist that maintaining any sort of state is heresy and will froth at the mouth if you think of any other authentication method. There are theoretical benefits to this sort of standards-compliance - it's supported by Apache out of the box - you could store your objects as files in folders protected by .htaccess files if your heart desired!
+
+  The _problem_? You are caching on the client-side a username and password. This gives evil.ru a better crack at it - even the most basic of XSS vulnerabilities could result in the client beaming his username and password to an evil server. You could try to alleviate this risk by hashing and salting the password, but remember: _JavaScript Crypto is Hopeless_. You could alleviate this risk by leaving it up to the Browser's Basic Auth support, but.. ugly as sin, as mentioned earlier. 
+
+  ## HTTP Digest Auth ##
+
+  [http://stackoverflow.com/questions/5288150/digest-authentication-w-jquery-is-it-possible](http://stackoverflow.com/questions/5288150/digest-authentication-w-jquery-is-it-possible)
+
+  A more "secure" auth, this is a request/response hash challenge. Except _JavaScript Crypto is Hopeless_, so it only works over SSL and you still have to cache the username and password on the client side, making it more complicated than HTTP Basic Auth but _no more secure_.
+
+  ## Query Authentication with Additional Signature Parameters. ##
+
+  Another more "secure" auth, where you encrypt your parameters with nonce and timing data (to protect against repeat and timing attacks) and send the. One of the best examples of this is the OAuth 1.0 protocol, which is, as far as I know, a pretty stonking way to implement authentication on a REST server. 
+
+  [RFC 5849: OAuth 1.0](http://tools.ietf.org/html/rfc5849)
+
+  Oh, but there aren't any OAuth 1.0 clients for JavaScript. Why?  
+ 
+  _JavaScript Crypto is Hopeless_, remember. JavaScript can't participate in OAuth 1.0 without SSL, and you still have to store the client's username and password locally - which puts this in the same category as Digest Auth - it's more complicated than HTTP Basic Auth but it's _no more secure_. 
+
+  ## Token ##
+
+  The user sends a username and password, and in exchange gets a token that can be used to authenticate requests. 
+
+  This is marginally more secure than HTTP Basic Auth, because as soon as the username/password transaction is complete you can discard the sensitive data. It's also less RESTful, as tokens constitute "state" and make the server implementation more complicated. 
+
+  ### SSL Still ###
+
+  The rub though, is that you still have to send that initial username and password to get a token. Sensitive information still touches your compromisable JavaScript. 
+
+  To protect your user's credentials, you still need to keep attackers out of your JavaScript, and you still need to send a username and password over the wire. SSL Required.
+
+  ### Token Expiry ###
+  It's common to enforce token policies like "hey, when this token has been around too long, discard it and make the user authenticate again." or "I'm pretty sure that the only IP address allowed to use this token is `XXX.XXX.XXX.XXX`". Many of these policies are pretty good ideas.
+
+  ### Firesheeping ###
+
+  However, using a token Without SSL is still vulnerable to an attack called 'sidejacking': http://codebutler.com/firesheep/
+
+  The attacker doesn't get your user's credentials, but they can still pretend to be your user, which can be pretty bad. 
+
+  tl;dr: Sending unencrypted tokens over the wire means that attackers can easily nab those tokens and pretend to be your user. FireSheep is a program that makes this very easy. 
+
+  ### A Separate, More Secure Zone ###
+
+  The larger the application that you're running, the harder it is to absolutely ensure that they won't be able to inject some code that changes how you process sensitive data. Do you absolutely trust your CDN? Your advertisers? Your own code base? 
+
+  Common for credit card details and less common for username and password - some implementers keep 'sensitive data entry' on a separate page from the rest of their application, a page that can be tightly controlled and locked down as best as possible, preferably one that is difficult to phish users with. 
+
+  ## Cookie (just means Token) ##
+  It is possible (and common) to put the authentication token in a cookie. This doesn't change any of the properties of auth with the token, it's more of a convenience thing. All of the previous arguments still apply. 
+
+  ## Session (still just means Token) ##
+  Session Auth is just Token authentication, but with a few differences that make it seem like a slightly different thing: 
+
+  * Users start with an unauthenticated token.
+  * The backend maintains a 'state' object that is tied to a user's token.
+  * The token is provided in a cookie.
+  * The application environment abstracts the details away from you.
+
+  Aside from that, though, it's no different from Token Auth, really.
+
+  This wanders even further from a RESTful implementation - with state objects you're going further and further down the path of plain ol' RPC on a stateful server.  
+
+  ## OAuth 2.0 ##
+
+  OAuth 2.0 looks at the problem of "How does Software A give Software B access to User X's data without Software B having access to User X's login credentials."
+
+  The implementation is very much just a standard way for a user to get a token, and then for a third party service to go "yep, this user and this token match, and you can get some of their data from us now." 
+
+  Fundamentally, though, OAuth 2.0 is just a token protocol. It exhibits the same properties as other token protocols - you still need SSL to protect those tokens - it just changes up how those tokens are generated.
+
+  There are two ways that OAuth 2.0 can help you: 
+
+  * Providing Authentication/Information to Others 
+  * Getting Authentication/Information from Others
+
+  But when it comes down to it, you're just... using tokens. 
+
+  ## Back to your question ##
+
+  So, the question that you're asking is "should I store my token in a cookie and have my environment's automatic session management take care of the details, or should I store my token in Javascript and handle those details myself?" 
+
+  And the answer is: _do whatever makes you happy_. 
+
+  The thing about automatic session management, though, is that there's a lot of magic happening behind the scenes for you. Often it's nicer to be in control of those details yourself. 
+
+  ## I am 21 so SSL is yes ##
+
+  The other answer is: Use https for everything or brigands will steal your users' passwords and tokens.

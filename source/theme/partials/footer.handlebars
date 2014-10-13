@@ -1,24 +1,51 @@
     </div><!-- inner -->
     <div class='footer_separator'> </div>
     <div class='footer'>
-        {{#each-key categories }}
-            <div class='category'>
-            <h2 id="{{this.key}}">{{this.key}}</h2>
+        <div class='category cube_drone'>
+            <h2 id='cube_drone'>Cube Drone</h2>
             <ul>
-                {{#each-limit this.value 5}}
+                {{#each-limit reverse_categories.[Cube Drone] 5}}
                     <li class='post'><a href="{{this.id}}.html">{{this.title}}</a></li>
                 {{/each-limit}}
             </ul>
-            </div>
-        {{/each-key}}
-        <div class='footer_content'>
-            <p>Here are a bunch of words that go in the footer. </p>
-
-            <p> Legal legal, legal legal. </p>
-            <p> Copyright doop dorp. </p> 
         </div>
+        <div class='category video'>
+            <h2 id='video'>Video</h2>
+            <ul>
+                {{#each-limit reverse_categories.[Cube Drone Video] 5}}
+                    <li class='post'><a href="{{this.id}}.html">{{this.title}}</a></li>
+                {{/each-limit}}
+            </ul>
+        </div>
+        <div class='category blog'>
+            <h2 id='video'>Blog</h2>
+            <ul>
+                {{#each-limit reverse_categories.[Blog] 5}}
+                    <li class='post'><a href="{{this.id}}.html">{{this.title}}</a></li>
+                {{/each-limit}}
+            </ul>
+        </div>
+        <div class='footer_content'>
+            <p>&copy; Curtis Lassam 2014</p>
+            <p>Here are a bunch of words that go in the footer. </p>
+            
+            <p>This site built using the <a href="http://curtis.lassam.net/arglebargle">Arglebargle Website Engine</a></p>
+        </div>
+        <div style='clear:both;'></div>
     </div>
     </div><!-- content -->
     {{> js}}
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-973454-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
 </body>
 </html>

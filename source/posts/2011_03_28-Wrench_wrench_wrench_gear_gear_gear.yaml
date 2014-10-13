@@ -1,0 +1,50 @@
+---
+title: ! 'Wrench wrench wrench gear gear gear '
+created: '2011-03-28T01:45:44+00:00'
+visible: false
+categories:
+- Needlessly Technical
+content_type: html
+content: ! "So, I've been 'all quiet on the western front' in terms of content updates
+  lately. \n\nAt the moment, it's because I'm hacking away at a static website generation
+  script in python. \n\nIt started out a little bit simple - as a comic management
+  site - and became more and more complex over time. Hey, there's not much difference
+  between a comic management site and a blog, right? I just need to add this... \n\nAt
+  the moment, it can take an entire Wordpress site as input and generate a sort-of-approximation
+  in static HTML as output.  There are also tools to create an empty site, publish
+  content, and render three or four different file-types... but all things considered,
+  it's still too raw to go live, as of yet. \n\nThe way it works is as follows:\n\nThe
+  user has a folder that defines your entire website.  (There's a script in the pile
+  to generate the skeleton of this folder for convenience's sake.)  Let's call it
+  \"Input\".  This folder can be managed by source control. \n\nInput contains a folder
+  called 'content', which contains a huge, unsorted pile of the content of the user's
+  website - blog posts in HTML files, images in PNG and GIF and JPEG formats, plain-text
+  files, the works.  There's no enforced directory structure in here. By default,
+  nothing in 'content' is published. The user can just drop stuff into 'content' willy-nilly
+  and nothing will happen to it. \n\n'content' also contains a css and js folder.
+  These folders are copied whole into the final, generated website - and the css and
+  js files are linked to every generated HTML page. \n\nInput also contains a folder
+  called 'data', which contains a tree of JSON files describing the structure of the
+  site.  Each JSON file contains a link to a file in the 'content' folder, as well
+  as a title, publication date, and category. \n\nA 'publish' script will, given a
+  path to a content file, automatically create entries in the 'data' folder. \n\nThe
+  stevedore generation script runs through the input directory, reading the json files,
+  linking them to the content files, and producing a website as output. Because the
+  content files are separate from the stevedore 'data' files, these content files
+  must be converted into HTML - for this, we have a dynamic, pluggable rendering system
+  that (based on the file's extension) decides what renderer to use on the file.   As
+  an example, if we pass in \"image.jpg\", stevedore finds and uses RenderImage.py
+  to produce &lt;img src=&quot;image.jpg&quot; /&gt;  - if we pass in a HTML file,
+  stevedore finds and uses RenderHTML.py to load the HTML file, and return it as a
+  block of HTML.  This way, if a user wants to, say, add LaTeX support to his stevedore
+  instance, said user needs only to write a RenderLaTeX.py file, give it a target
+  file-type (.tex), and tell it how to convert the contents of that file into HTML.
+  \n\nThere's still a lot of work to be done.  A default css and js needs to be wedged
+  in.  At the moment, the site can't render 'index' pages - only individual content
+  pages.  RSS support is, of course, critical. I want to add support for 'content
+  hooks' - essentially, bits of added functionality added to individual pages.  Then
+  I want to write Disqus support using the hooks. The whole codebase is a bit 'scripty'
+  - it needs to be cleaned up, and a lot of the documentation is only in my head at
+  the moment. \n\nBut that's what I'm working on right now.\n\nYou're welcome to poke
+  around, if you're curious: ( <a href=\"http://svn.lassam.net/stevedore/\">http://svn.lassam.net/stevedore/</a>
+  ) "

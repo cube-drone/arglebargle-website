@@ -1,11 +1,3 @@
-@import "susy";
-@import "breakpoint";
-
-$phone: 740px;
-
-$susy: (
-    columns: 6,
-);
 
 body{
     background: url('../images/skulls.png') repeat;
@@ -18,26 +10,26 @@ body{
     margin-top: -20px;
     margin-bottom: -20px;
     padding-bottom: 40px;
-    @include container(1020px);
+    width: 1050px;
+    margin: auto;
     background-color: white;
     padding-top: 0;
     padding-left: 10px;
     padding-right: 10px;
-    opacity: 0.9;
+    opacity: 0.95;
     border-left: 1px solid #888;
     border-right: 1px solid #888;
     border-bottom: 1px solid #888;
 }
 
 h1{
-    @include breakpoint($phone){
-        @include span(3 of 6);
-    }
+    width: 400px;
     height: 90px;
     font-size: 60px;
     margin-top: 0;
     padding-top: 10px;
     position: relative;
+    margin-bottom: 5px;
 
     a {
         color: #333;
@@ -55,21 +47,12 @@ h1{
 }
 
 .nav{
-    margin: 0;
+    margin: 20px;
     padding: 0;
-    height: 50px;
-    @include breakpoint($phone){
-        @include span(last 3 of 6);
-        height: 100px;
-    }
-    position: relative;
-    position: relative;
+    float: right;
     ul {
         margin: 0;
         padding: 0;
-        position: absolute;
-        bottom: 17px;
-        left: 0;
         li{
             display: block;
             float: left;
@@ -92,7 +75,6 @@ h1{
 
 .intro{
     font-size: large;
-    @include span(100%);
     padding: 15px;
     background-color: #CCC;
     border: 1px solid #888;
@@ -114,7 +96,6 @@ code{
 }
 
 .inner{
-    @include span(100%);
     
     pre {
         font-size: large;
@@ -124,30 +105,41 @@ code{
         color: white;
     }
 
-    .index {
+    ul {
         padding-left: 0;
+    }
+
+    .fade {
+        height: 200px;
+        overflow: hidden;
+        border-bottom: 2px dotted gray;
+        width: 100%;
     }
 
     .post {
         list-style-type: none;
         display: block;
-        h2{
-            @include breakpoint($phone){
-                @include span(4 of 6);
-            }
-            margin-bottom: 25px;
+        h3{
+            margin-top: 5px;
+            margin-bottom: 5px;
             a{
                 color: #333;
                 text-decoration: none;
             }
         }
-        h3{
-            @include breakpoint($phone){
-                @include span(last 2 of 6);
-            }
-            margin-bottom: 28px;
+        h4{
+            margin-top: 5px;
+            margin-bottom: 5px;
             font-weight: 200;
             padding-top: 5px;
+        }
+        img{
+            width: 1030px;
+        }
+        .post_content{
+            ul{
+                margin-left: 15px;
+            }
         }
     }
 
@@ -168,7 +160,6 @@ code{
 }
 
 .post_content{
-    @include span(100%);
     padding-bottom: 10px;
     border-bottom: 1px dashed #888;
     margin-bottom: 20px;
@@ -176,29 +167,12 @@ code{
 }
 
 .category_title{
-    @include span(100%);
 }
 
 .fpnl{
-    @include span(100%);
     margin-bottom: 15px;
-    .first{
-        text-align: center;
-        @include span(1 of 6);
-    }
-    .previous{
-        text-align: center;
-        @include span(1 of 6);
-    }
-    .next{
-        text-align: center;
-        @include span(1 of 6);
-    }
-    .last{
-        text-align: center;
-        @include span(1 of 6);
-    }
     a{
+        text-align: center;
         color: white;
         font-weight: 700;
         background: #888;
@@ -206,6 +180,8 @@ code{
         border-radius: 5px;
         border: 1px solid #666;
         text-decoration: none;
+        margin-left: 10px;
+        float: left;
     }
     a:hover{
         background: #666;
@@ -213,15 +189,14 @@ code{
 }
 
 .footer_separator{
-    @include span(100%);
     border-top: 10px solid black;
 }
 
 .footer{
     .category{
-        @include breakpoint($phone){
-            @include span(1 of 6);
-        }
+        float: left;
+        width: 150px;
+        padding-left: 15px;
         ul{
             padding-left: 2px;
             li{
@@ -231,8 +206,5 @@ code{
         }
     }
     .footer_content{
-        @include breakpoint($phone){
-            @include span(last 3 of 6);
-        }
     }
 }

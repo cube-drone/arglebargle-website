@@ -46,12 +46,13 @@ gulp.task('compile_posts', function(cb){
         .pipe(stripBom())
         .pipe(plumber())
         .pipe(yml())
-        .pipe(arglebargle.appendFileinfo())
         .pipe(arglebargle.tidyInput())
+        .pipe(arglebargle.appendFileinfo())
         .pipe(arglebargle.render())
         .pipe(gulp.dest('./target/json/posts'));
 });
 
+/* Concatenate any rendered post into an file containing all posts */
 gulp.task('concatenate_posts', ['compile_posts'], function(){
     return gulp.src('./target/json/posts/*.json')
         .pipe(jsonCombine("posts.json",function(data){
@@ -61,6 +62,7 @@ gulp.task('concatenate_posts', ['compile_posts'], function(){
         .pipe(gulp.dest('./target/json/'));
 });
 
+/* Convert config.yaml into config.json */
 gulp.task('compile_config', function(){
     return gulp.src('./source/config.yaml')
         .pipe(yml())
@@ -68,6 +70,7 @@ gulp.task('compile_config', function(){
         .pipe(gulp.dest('./target/json/'));
 });
 
+/* Sort posts by date to create an index */
 gulp.task('compile_index', ['concatenate_posts'], function(){
     return gulp.src('./target/json/posts.json')
         .pipe(arglebargle.buildIndex())
@@ -75,6 +78,7 @@ gulp.task('compile_index', ['concatenate_posts'], function(){
         .pipe(gulp.dest('./target/json/'));
 });
 
+/* Pull the category field from each post to create an index of each category */
 gulp.task('compile_categories', ['concatenate_posts'], function(){
     return gulp.src('./target/json/posts.json')
         .pipe(arglebargle.buildCategories())
@@ -82,11 +86,21 @@ gulp.task('compile_categories', ['concatenate_posts'], function(){
         .pipe(gulp.dest('target/json/'));
 });
 
-gulp.task('concatenate_master', ['compile_config', 'compile_index', 'compile_categories'], function(){
+/* Pull the category field from each post to create an index of each category */
+gulp.task('compile_reverse_categories', ['concatenate_posts'], function(){
+    return gulp.src('./target/json/posts.json')
+        .pipe(arglebargle.buildReverseCategories())
+        .pipe(rename("reverse_categories.json"))
+        .pipe(gulp.dest('target/json/'));
+});
+
+/* Combine index.json, config.json and categories.json into one 'master' json file */
+gulp.task('concatenate_master', ['compile_config', 'compile_index', 'compile_categories', 'compile_reverse_categories'], function(){
     return gulp.src('./target/json/*.json') 
         .pipe(ignore.include(function(file){
             return (file.path.indexOf("config.json") > -1 ||
                     file.path.indexOf("index.json") > -1 ||
+                    file.path.indexOf("reverse_categories.json") > -1 ||
                     file.path.indexOf("categories.json") > -1);
         }))
         .pipe(jsonCombine("master.json",function(data){
@@ -158,7 +172,8 @@ gulp.task('posts_html', ['partials'], function(){
                         .pipe(gulp.dest('./target'))
                         .pipe(print())
                     return {};
-                }));
+                }))
+                .pipe(print())
             return {};
         }))
 });
@@ -228,11 +243,12 @@ gulp.task('watch', function(){
 });
 
 gulp.task('upload', function(){
-    return gulp.src('./target/*')
+    return gulp.src('target/**')
         .pipe(rsync({
             root: 'target', 
             hostname: 'classam@lassam.net', 
-            destination: '/home/classam/curtis.lassam.net/arglebargle', 
-            update: true, 
+            destination: '/home/classam/cube-drone.com', 
+            update: true,
         }))
+        .pipe(print())
 });

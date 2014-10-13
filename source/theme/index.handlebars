@@ -1,29 +1,66 @@
 {{> partials/header }}
 
-<div class='intro'>
-{{> partials/intro }}
-</div>
-
+<h2>Recent</h2>
 <ul class='index'>
-{{#each-limit index 3}}
+{{#each-limit index 1}}
 <li class='special post'>
-    <h2><a href="{{this.id}}.html">{{this.title}}</a></h2> 
-    <h3>{{this.human_date}}</h3>
-    <div class='post_content'>
-    {{{this.html}}}
+    <h3><a href="{{this.id}}.html">{{this.title}}</a></h3>
+    <h4>{{this.human_date}}</h4>
+    <div class='post_content fade'>
+        {{{this.html}}}
     </div>
+    <a href="{{this.id}}.html">Read More!</a>
     </li>
 {{/each-limit}}
 </ul>
 
+<h2>Cube Drone</h2>
+<ul>
+{{#each-limit reverse_categories.[Cube Drone] 1}}
+<li class='special post'>
+    <h3><a href="{{this.id}}.html">{{this.title}}</a></h3> 
+    <div class='post_content fade'>
+    {{{this.html}}}
+    </div>
+    <a href="{{this.id}}.html">Read More!</a>
+    </li>
+{{/each-limit}}
+</ul>
+
+<h2>Video</h2>
+<ul>
+{{#each-limit reverse_categories.[Cube Drone Video] 1}}
+<li class='special post'>
+    <h3><a href="{{this.id}}.html">{{this.title}}</a></h3> 
+    <div class='post_content fade'>
+    {{{this.html}}}
+    </div>
+    <a href="{{this.id}}.html">Read More!</a>
+    </li>
+{{/each-limit}}
+</ul>
+
+<h2>Blog</h2>
+<ul>
+{{#each-limit reverse_categories.[Blog] 1}}
+<li class='special post'>
+    <h3><a href="{{this.id}}.html">{{this.title}}</a></h3> 
+    <div class='post_content fade'>
+    {{{this.html}}}
+    </div>
+    <a href="{{this.id}}.html">Read More!</a>
+    </li>
+{{/each-limit}}
+</ul>
+
+<h2>Full Index</h2>
 <ul class='full-index'>
 {{#each index}}
 <li class='special post'>
-    <h2><a href="{{this.id}}.html">{{this.title}}</a></h2> 
-    <h3>{{this.human_date}}</h3>
+    <strong><a href="{{this.id}}.html">{{this.title}}</a></strong> 
+    - <small>{{this.human_date}}</small>
 </li>
 {{/each}}
 </ul>
-
 
 {{> partials/footer }}

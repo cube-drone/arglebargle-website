@@ -1,0 +1,8 @@
+--- 
+content_type: comic
+title: "18 - Klaxons"
+created: "2013-02-06T01:00:00-07:00"
+visible: true
+categories: ["Cube Drone" ]
+comic: "http://curtis.lassam.net/comics/cube_drone/18.gif"
+alt-text: "Moving to a company with automated builds, TDD culture, and mandatory code review is a big step for a lot of cowboy coders."

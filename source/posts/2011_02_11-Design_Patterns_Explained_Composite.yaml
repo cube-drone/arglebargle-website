@@ -1,0 +1,22 @@
+---
+title: ! 'Design Patterns Explained: Composite'
+created: '2011-02-11T09:07:21+00:00'
+visible: true
+categories:
+- Old Comics
+content_type: html
+content: ! "<img src=\"http://www.curtis.lassam.net/comics/design_patterns/Composite.gif\"
+  alt=\"Composite\" />\n\nThis one may require a little bit more elaboration. \n\nLet's
+  imagine that we have a series of objects that we represent the same way - for example,
+  we run a warehouse, and each shippable item either implements the \"iShippableItem\"
+  interface or extends from an abstract \"ShippableItem\" object.  All of these shippable
+  items have properties that are important to know - dimensions, weight, whether or
+  not they are fragile, a source, a destination, maybe a log of places where they
+  have been.  \n\nNow, let's imagine that we have a large pallet of items - we take
+  a bunch of objects that themselves are shippable, and we tape them together on a
+  pallet so that we can move them around and store them more easily. This pallet is
+  composed of ShippableItems - but it has it's own dimensions, weight, fragility,
+  source, destination, and places-log. So the pallet, which is composed of ShippableItems,
+  is itself a ShippableItem.  We can even put pallets (which are ShippableItems) inside
+  other pallets (which are composed of ShippableItems). \n\nThat way, when we write
+  a Truck object, it only needs to worry about ShippableItems."

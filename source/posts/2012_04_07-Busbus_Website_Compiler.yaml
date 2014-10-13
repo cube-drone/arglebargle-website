@@ -1,0 +1,47 @@
+---
+title: Busbus Website Compiler
+created: '2012-04-07T13:13:35-07:00'
+visible: false
+categories:
+- Blog
+content_type: markdown
+content: |
+  So, if you've been following me on RSS, you may have noticed that my site is currently going through a little bit of
+  crazy go-nuts wackytown times. The reason? I've switched away from my old pal, Wordpress, and am now using a blog engine
+  entirely of my own design.
+
+  ![Rube Goldberg Contraption](http://upload.wikimedia.org/wikipedia/en/thumb/8/88/Rubenvent.jpg/450px-Rubenvent.jpg)
+
+  No, I have not gone crazy. 
+
+  It's a static website compiler. It takes, as an argument, a folder full of .yaml files, and produces, as output, an entire
+  website. The [compiler](https://github.com/classam/busbus), 
+  the [theme](https://github.com/classam/busbus_theme), 
+  and the [content itself](https://github.com/classam/Blog) all occupy separate git repositiories, and if I change anything 
+  (and push it to git), it will re-generate my website using a git hook.
+
+  But why? 
+
+  Well, recently, Wordpress has been giving me a lot of trouble.  The site's been hacked, the comment system is uninspiring, 
+  and honestly, I just wanted to build something.  I like building things. 
+
+  The entirely static website output is fast. Very fast. There is almost zero server overhead to doling out flat files.
+  You can, should you so choose, page through my entire website, pretty quickly.  Page load times are in the 100 millisecond range.
+
+  Of course, Wordpress handles that same problem well with the wp_cache plugin. And I'll bloat that 100 milliseconds up with
+  unnecessary javascript glitter as soon as I can. But still! 
+
+  Okay, the much bigger difference? I wrote it myself. And the codebase is quite small. Yes. Nigh-infinite customization is at 
+  my fingers. If I want to write blog posts in [markdown](http://daringfireball.net/projects/markdown/syntax)? 
+  Sure. Let's say, I want to write a script that queues up a blog post for me in my favourite text editor. 
+  Done. Want to drop a chunk of content from my favourite IRC channel on to my
+  blog without extensively hand-formatting it first? I could write a script for that, no problem. Heck, the whole system is 
+  designed from the ground up to be trivially easy to poke around in. 
+
+  There are still features to add. Things like:
+  - A website style that doesn't look like I found it at the bottom of a box of crackerjacks. 
+  - DISQUS comments. 
+  - Unnecessary but shiny javascript features! (See also: DISQUS comments.)
+
+  And if you notice any unusual problems or huge errors, you should.. alert me to that fact. Perhaps using the comment system
+  that I haven't implemented yet. 

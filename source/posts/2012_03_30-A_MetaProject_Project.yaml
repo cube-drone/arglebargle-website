@@ -1,0 +1,63 @@
+---
+title: A Meta-Project Project
+created: '2012-03-30T11:00:16+00:00'
+visible: false
+categories:
+- Misc
+content_type: html
+content: ! "<a href=\"https://twitter.com/#!/apike/status/185789545353183232\" title=\"Allen
+  Pike\">\"It's that time of year again: the days are getting longer, and I have a
+  half dozen product ideas I'm excited about.\"</a>\n\nYep. Spring is here.  And while
+  I've been making steady progress on whatever arbitrary things I work on, it's often
+  hard to keep track of them all. There are just SO MANY PROJECTS that I want to work
+  on. And so little time! And, worst of all, with so many simultaneous projects, it's
+  all-to-easy to lose track of where I am on all of them. \n\nSo, I need to track
+  projects! The thought came to me in the shower and I started mocking up the UI in
+  my head almost instantly. Create a set of master projects. Put micro-goals in each
+  category. A few major milestones in there to mix things up. Priority rankings! Categories.
+  Tags. Stats!\n\nOf course, the only problem with such a project is that it is likely
+  to get mixed up with all of my other projects. Quickly. In order for me to make
+  any progress on it - or backburner it, as I am wont to do, without forgetting about
+  it - it would need to exist, already.  The meta-project needs to exist within itself,
+  and thus cannot exist (yet) !\n\nSo, in order to deal with the potentially infinite
+  recursion of that problem, I started mocking up the functionality of the app using
+  iPad Reminders. \n\nEach project gets a tab of its own.  Micro-goals get added to
+  the reminders, and tagged with their project. It doesn't offer much in the way of
+  stats, or tracking, but it's usable right away. \n\n<img src=\"http://curtis.lassam.net/images/meta_project.png\"
+  alt=\"Whoa. \" />\n\nIt wasn't until I started actually using it that I realized
+  exactly how many projects I have on the go. 12. 12 projects. No wonder I'm so frantic
+  all the time. \n\nThere's... \n\n<ul>\n<li> <strong>Diet & Exercise</strong> - Which
+  is just micro-goals related to eating healthier and occasionally moving places.
+  </li>\n<li> <strong>Finances</strong> - Relating to saving smallish amounts of money,
+  resolving my taxes, and that sort of thing. </li>\n<li> <strong>Hygeine</strong>
+  - Basic around-the-house stuff like \"Do the dishes\" and \"Remove dead squirrel
+  from microwave.\" </li>\n<li> <strong>BusBus</strong> - A <a href=\"http://www.reddit.com/r/Design/comments/rjkb7/do_you_know_what_i_hate_about_a_lot_of_graphic/c46ju4e\">static
+  website compiler</a> built in Ruby.  This started out as <em>Stevedore</em>, a static
+  website compiler built in Python - but the original codebase was more of a prototype,
+  designed to be a complete content management system, and quickly became an unmaintainable
+  mess of scripts. So, green-field. </li> \n<li> <strong>7 Languages</strong> - Relating
+  to reading and doing the exercises in the book <a href=\"http://pragprog.com/book/btlang/seven-languages-in-seven-weeks\">\"7
+  Languages in 7 Weeks\"</a>. Note that this book is the reason that BusBus/Stevedore
+  is being rewritten in Ruby. </li> \n<li> <strong>Gamification</strong> - Relating
+  to reading the book <a href=\"http://shop.oreilly.com/product/0636920014614.do\">\"Gamification\"</a>
+  </li> \n<li> <strong>Wasteland</strong> - A board/card game that I developed in
+  my spare time. Thanks to its 10+ playtests and many revisions, it's actually playable-by-humans,
+  now, but it still needs a ton of work before it's _good_. </li> \n<li> <strong>Food
+  Truck</strong> - An experimental app built in backbone.js for managing restaurant
+  food costing, as well as a JSON-event-store backend that I'm fiddlin' with. </li>
+  \n<li> <strong>Watchmaker</strong> - I released the puzzle game \"<a href=\"http://www.thewatchmakersdilemma.com/\">The
+  Watchmaker's Dilemma</a>\", but it still needs a lot of improvements in usability,
+  stability, and user-persistence. </li> \n<li> <strong>Paranoia</strong> - Paranoia
+  is a pen-and-paper RPG set in a slapstick Sci-Fi orwellian universe where simply
+  knowing the rules is treason and punishable by death. I'm working on reading the
+  rules and putting together a PLAYABLE ADVENTURE. Then, later, I'll inflict it on
+  some unexpecting people.  </li>  \n<li> <strong>Leisure</strong> - Fun things that
+  I've been meaning to do. Watch all of Ghost In The Shell: Stand Alone Complex. Play
+  more Spacechem. Play through some of my Steam or iPad game surplus. </li> \n<li>
+  <strong> Distributed AI </strong> - Learn more about distributed systems. Learn
+  more about AI problem-solving. </li> \n<li> <strong> Godel Escher Bach </strong>
+  - Every time I make it halfway through this book I get distracted and have to start
+  again from scratch. Dammit. </li> \n<li> <strong> Meta Project </strong> - This
+  project. That I'm talking about. Right now. </li> \n</ul> \n\nWhoa. Lots of stuff
+  to work on. \n\nA nice bonus from the system? If I'm ever bored, I can just jump
+  around and grab a sub-goal to work on from the Pile."

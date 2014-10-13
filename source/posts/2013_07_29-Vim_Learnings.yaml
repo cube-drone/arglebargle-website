@@ -1,0 +1,16 @@
+--- 
+content_type: irc
+title: "Vim Learnings" 
+visible: true
+created: "2013-07-29T13:00:00-07:00"
+categories: ["Blog"]
+content: |
+  <classam> if I'm in vim and go 
+  <classam> :! complicated shell command 
+  <classam> ... and I want to run that complicated shell command _again_ without having to retype it, is there a keystroke for that?
+  <yangman> : <up arrow>
+  <classam> oh, hey, nice
+  <yangman> it's actually context sensitive, to a degree
+  <classam> I have to scroll through all of my compulsive :w's, though >_> :P
+  <yangman> if you go :! then up-arrow, it'll only show those
+  <classam> Nice

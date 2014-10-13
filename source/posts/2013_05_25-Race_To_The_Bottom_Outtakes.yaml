@@ -1,0 +1,105 @@
+--- 
+content_type: irc
+title: "Race to the Bottom Outtakes" 
+visible: true
+created: "2013-05-25T23:55:00-07:00"
+categories: ["Blog"]
+content: |
+  <n0ob> so back to cube drone
+  <lassam> Yeah
+  <n0ob> I liked the bull dozer one
+  <lassam> :D
+  <lassam> I hate Dressed to the Nines
+  <n0ob> if you want to be news relevent you can make a home datacentre joke
+  <lassam> hate it
+  <lassam> SO MUCH
+  <lassam> http://curtis.lassam.net/post/2013_05_24-Cube_Drone_30_Dressed_to_the_Nines.html
+  <lassam> I didn't see that story
+  <lassam> Home data centre?
+  <n0ob> the guy who used 77tb in a month
+  <n0ob> jeikobu: linked it above
+  <n0ob> just before you started complaining about it being quiet in here
+  <lassam> Okay, read the article
+  <lassam> Home data centre
+  <lassam> 77TB bandwidth at peak
+  <lassam> ugh
+  <lassam> the only joke that comes to mind immediately is "looks like pfak's got family down south"
+  * pfak eyes lassam 
+  <lassam> Which is not comic-ready >_>
+  <pfak> joke has already been used.
+  <n0ob> heh, I'm less talking about the bandwidth than the full rack of equipment
+  <pfak> I think that's a ridiculous amount of bandwidth and rack for a house.
+  <lassam> It's not even original! 
+  <pfak> If I was a millionaire I would have that much rack.
+  <pfak> Actually, if I was a millionaire I wouldn't because it's fucking pointless.
+  <lassam> that's what she said? 
+  <lassam> I'm coming up blank on this home data thing
+  <pfak> I'd get a midget to design a midget rack.
+  <n0ob> lassam: not that funny then
+  <lassam> Explore it a bit. What kind of person builds a rack like that? (A dedicated hobbyist. Not funny.)  How did it take them so long to notice? (It's not like they watch all the traffic all the time) 
+  <lassam> A home rack must suck down a lot of electricity
+  <n0ob> Mr Drone did build a massive array of old laptops
+  <lassam> Especially in BC or California, if you're sucking back that much power, people are going to think you're running a grow op
+  <lassam> Oh
+  <lassam> Way funnier than the sort of guy who runs a full operational rack out of his home with FiOS?
+  <n0ob> Yeah, I'm just thinking the home datacenter idea
+  <n0ob> not anything specific to that article
+  <lassam> The sort of moron who would run the rack that's in my apartment with no clear goal, just because
+  <n0ob> it just tipped me off
+  <lassam> "Why do you even have this?"  "I don't know. It seemed like a good idea at the time."
+  <n0ob> maybe a couple racks of historically obsolete gear
+  <n0ob> for no real good reason
+  <lassam> "Why are you running all of these?"  "Furnace broke." 
+  * n0ob recalls that hjohnson once heated his apartment that way
+  <pfak> lassam: Did you hear about that guy that got raided because he had too many computers on in BC?
+  <lassam> pfak: I did not
+  <pfak> They didn't find any pot so they found something wrong wtih his electrical setup and fined him for that.
+  <pfak> Asshat.s
+  <n0ob> yeah that happened a few months ago
+  <lassam> In other fresh news, XBox One, new Daft Punk album, controversy about 3D-printed guns
+  <lassam> Google is becoming more insular
+  <lassam> There was some meat to that thing that Yang posted
+  <lassam> https://kkinder.com/2013/05/21/leaving-googles-silo-alternatives-to-gmail-talk-calendar-and-more/
+  <n0ob> oh yeah, not what I'd call comic content though
+  <lassam> I thought that "OwnCloud looked like an ace in the hole for contact/calendar synchronization, until I tried using it. Astonishingly, if I added an event at 8:00 AM in Denver time, OwnCloud stores it as 8:00am UTC. Then if I add an event for 10 AM CDT, OwnCloud stores it as 10:00 AM UTC. OwnCloud’s CalDav implementation literally pretends that timezones do not exist, which is of course a show-stopper."
+  <lassam> was pretty funny
+  <n0ob> yeah, for calendaring software
+  <lassam> Maybe a three-panel about a software developer who refuses to believe that timezones exist
+  <n0ob> could work
+  <n0ob> I don't know what the joke would be though
+  <lassam> Yeah, I'm not getting anything either
+  <n0ob> maybe a plot comic?
+  <lassam> Gasp
+  <lassam> No, I'm out on plot comics. I don't want to be a PVP. 
+  <lassam> The characters are here, now just Use Them To Further Comics. :P 
+  <lassam> ...  everybody's racing to be the king of the set-top world, but the best set-top box for the past 5 years has just been ANY TOWER WITH HDMI OUT
+  <lassam> >_>
+  <lassam> A wireless keyboard and mouse, too, I guess
+  <lassam> It supports all of the streaming services, plays hundreds of games, handles music, has in-depth social integration
+  <lassam> Can be used to sort your photos... 
+  <lassam> All Microsoft needs to win this war is the ability to set the default font size WAY UP
+  <n0ob> and you don't have to fight with a terrible TV remote interface
+  <lassam> Yeah
+  <Ralith> haha
+  <lassam> In Windows, some of the font-sizes are configurable (for things like "name of the window") and some of them are fixed (for things like "filenames") 
+  <lassam> And the only way to crank up the fixed-size fonts is to futz with the DPI settings, which breaks a lot of layouts
+  <lassam> I strongly believe that Best Set-Top Box would just be Windows 7 (not Windows 8, fuck you, Metro), but with bigger fonts 
+  <n0ob> you could get a comic out of that
+  <lassam> "For the past few years, every tech giant has been waging a war to see who can build the best set top box." 
+  <n0ob> I might start with how the Xbox One is supposed to be the next great settop bot
+  <n0ob> then go to "MS has been really close for years"
+  <n0ob> then "I just use a windows box with a hack to up the dpi. blows everything out of the water"
+  <n0ob> or maybe "chat about setting up the best set top box ever with all the cool stuff" / "asking what it is" / "Windows 7 desktop with a dpi hack"
+  <lassam> "The PS4, the Apple TV, the OUYA, the Google TV, the Steam Box, the Wii U, and now the XBox One are all competing to be the king of set-top boxes" 
+  <lassam> leave out the Steam Box (unfinished) and the OUYA (too obscure)
+  <lassam> maybe put in the Slingbox? 
+  <n0ob> that leaves out actually popular ones like the roku
+  <lassam> Oh, forgot about the Roku
+  <lassam> "They've all ignored the single best competitor, offering all of the streaming services, a strong gaming option, support for a wide variety of media formats... "
+  <lassam> " Any PC. " 
+  <lassam> *ta daa*
+  <n0ob> best set top box in the world? cheap generic all-in-one atom box
+  <pfak> D:
+  <pfak> seems expensive.
+  <pfak> Does it have a 320GB or a 32GB drive
+  <jeikobu> My remote peripheries are just my laptop on wifi (and x2x)
