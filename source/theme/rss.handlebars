@@ -12,10 +12,10 @@
     {{#each-limit index 10}}
     <item>
         <title>{{this.title}}</title>
-        <link>{{config.baseurl}}/{{this.id}}.html</link>
+        <link>{{../config.baseurl}}/{{this.id}}.html</link>
         <description>{{this.html}}</description>
         <pubDate>{{this.pubdate}}</pubDate>
-        <guid>{{config.baseurl}}/{{this.id}}.html</guid>
+        <guid>{{../config.baseurl}}/{{this.id}}.html</guid>
         <dc:date>{{this.created}}</dc:date>
     </item>
     {{/each-limit}}
