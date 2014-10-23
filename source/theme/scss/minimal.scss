@@ -109,17 +109,64 @@ code{
         padding-left: 0;
     }
 
+    .recent{
+        padding: 5px;
+        border: 1px solid #999;
+        padding: 5px;
+        box-shadow: 10px 10px 5px #999;
+        margin-left: 20px;
+        margin-right: 54px;
+        margin-bottom: 15px;
+    }
+
+    .featured{
+        width: 300px;
+        margin-left: 20px;
+        float: left;
+        border: 1px solid #999;
+        padding: 5px;
+        box-shadow: 10px 10px 5px #999;
+       
+        h2{
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+        ul{
+            margin-top: 5px;
+        }
+    }        
+
     .fade {
+        display: block;
         height: 200px;
         overflow: hidden;
-        border-bottom: 2px dotted gray;
+        border: 1px dashed #999;
         width: 100%;
+        color: black;
+        text-decoration: none;
+    }
+    .readmore {
+        width: 100px;
+        margin: auto;
+        display: block;
+    }
+   
+    .tweets {
+        margin-top: 70px;
+        width: 300px;
+        float: right;
+        margin-right: 50px;
+    }
+    .full_index {
+        margin-left: 20px;
+        width: 645px;
+        float: left;
     }
 
     .post {
         list-style-type: none;
         display: block;
-        h3{
+        h2, h3{
             margin-top: 5px;
             margin-bottom: 5px;
             a{
