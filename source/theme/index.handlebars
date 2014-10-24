@@ -1,58 +1,76 @@
 {{> partials/header }}
 
-<h2>Recent</h2>
+<div class='recent'>
 <ul class='index'>
 {{#each-limit index 1}}
 <li class='special post'>
-    <h3><a href="{{this.id}}.html">{{this.title}}</a></h3>
+    <h2><a href="{{this.id}}.html">{{this.title}}</a></h2>
     <h4>{{this.human_date}}</h4>
-    <div class='post_content fade'>
-        {{{this.html}}}
-    </div>
-    <a href="{{this.id}}.html">Read More!</a>
+    <a class='fade' href="{{this.id}}.html">
+        <div class='post_content'>
+            {{{this.html}}}
+        </div>
+    </a>
+    <a class='readmore' href="{{this.id}}.html">Read More!</a>
     </li>
 {{/each-limit}}
 </ul>
+</div>
 
+<div class='featured featured_comic'>
 <h2>Cube Drone</h2>
 <ul>
 {{#each-limit reverse_categories.[Cube Drone] 1}}
 <li class='special post'>
     <h3><a href="{{this.id}}.html">{{this.title}}</a></h3> 
-    <div class='post_content fade'>
-    {{{this.html}}}
-    </div>
-    <a href="{{this.id}}.html">Read More!</a>
+    <a class='fade' href="{{this.id}}.html">
+        <div class='post_content'>
+        {{{this.html}}}
+        </div>
+    </a>
+    <a class='readmore' href="{{this.id}}.html">Read More!</a>
     </li>
 {{/each-limit}}
 </ul>
+</div>
 
+<div class='featured featured_video'>
 <h2>Video</h2>
 <ul>
 {{#each-limit reverse_categories.[Cube Drone Video] 1}}
 <li class='special post'>
     <h3><a href="{{this.id}}.html">{{this.title}}</a></h3> 
-    <div class='post_content fade'>
-    {{{this.html}}}
-    </div>
-    <a href="{{this.id}}.html">Read More!</a>
+    <a class='fade' href="{{this.id}}.html">
+        <div class='post_content'>
+        {{{this.html}}}
+        </div>
+    </a>
+    <a class='readmore' href="{{this.id}}.html">Read More!</a>
     </li>
 {{/each-limit}}
 </ul>
+</div>
 
+<div class='featured featured_blog'>
 <h2>Blog</h2>
 <ul>
 {{#each-limit reverse_categories.[Blog] 1}}
 <li class='special post'>
     <h3><a href="{{this.id}}.html">{{this.title}}</a></h3> 
-    <div class='post_content fade'>
-    {{{this.html}}}
-    </div>
-    <a href="{{this.id}}.html">Read More!</a>
+    <a class='fade' href="{{this.id}}.html">
+        <div class='post_content'>
+        {{{this.html}}}
+        </div>
+    </a>
+    <a class='readmore' href="{{this.id}}.html">Read More!</a>
     </li>
 {{/each-limit}}
 </ul>
+</div>
 
+<div style='clear:both;'></div>
+
+<div class='full_index'>
 <h2>Full Index</h2>
 <ul class='full-index'>
 {{#each index}}
@@ -62,5 +80,13 @@
 </li>
 {{/each}}
 </ul>
+</div>
+
+<div class='tweets'>
+    <a class="twitter-timeline"  href="https://twitter.com/classam" data-widget-id="304715092187025408">Tweets by @classam</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
+</div>
+
+<div style='clear:both;'></div>
 
 {{> partials/footer }}
