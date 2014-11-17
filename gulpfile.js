@@ -227,7 +227,7 @@ gulp.task('other_pages', ['partials'], function(){
         }));
 });
 
-gulp.task('default', ['index_html', 'posts_html', 'other_pages', 'rss'], function(){
+gulp.task('default', ['index_html', 'posts_html', 'other_pages', 'rss', 'sass'], function(){
 });
 
 gulp.task('watch', function(){
@@ -242,7 +242,7 @@ gulp.task('watch', function(){
     gulp.watch("./README.md", ['default'])
 });
 
-gulp.task('upload', function(){
+gulp.task('upload', ['default'], function(){
     return gulp.src('target/**')
         .pipe(rsync({
             root: 'target', 
