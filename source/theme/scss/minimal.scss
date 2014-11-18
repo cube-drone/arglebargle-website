@@ -1,6 +1,6 @@
 
 body{
-    background: url('../images/skulls.png') repeat;
+    background: url('../images/notebook.png') repeat;
     padding: 0;
     margin: 0;
     font-family: "tenso", "Raleway", Helvetica, Arial, sans-serif;
@@ -22,32 +22,46 @@ body{
     border-bottom: 1px solid #888;
 }
 
-h1,h2,h3,h4,h5,h6{
-    font-family: "museo-slab", Hevetica, Arial, sans-serif;
+.header{
+    background: url("../images/banner.gif");
+    width: 1050px;
+    height: 150px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #CCC;
+
+    h1{
+        width: 400px;
+        height: 90px;
+        font-size: 60px;
+        margin-top: 0;
+        margin-bottom: 5px;
+        margin-left: 125px;
+        padding-top: 30px;
+        position: relative;
+
+        a {
+            color: #333;
+            text-decoration: none;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding-bottom: 5px;
+        }
+        a:hover{
+            color: black;
+            border-bottom: 5px solid black;
+            padding-bottom: 0;
+        }
+    }
+
+    h2{
+        margin-top: -10px;
+        margin-left: 125px;
+    }
 }
 
-h1{
-    width: 400px;
-    height: 90px;
-    font-size: 60px;
-    margin-top: 0;
-    padding-top: 10px;
-    position: relative;
-    margin-bottom: 5px;
-
-    a {
-        color: #333;
-        text-decoration: none;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        border-bottom: 5px solid white;
-    }
-    a:hover{
-        color: black;
-        border-bottom: 5px solid black;
-        border-radius: 10px;
-    }
+h1,h2,h3,h4,h5,h6{
+    font-family: "museo-slab", Hevetica, Arial, sans-serif;
 }
 
 .nav{
@@ -65,14 +79,13 @@ h1{
             a{
                 color: #333;
                 text-decoration: none;
-                border-bottom: 5px solid white;
                 padding-bottom: 12px;
                 font-family: "museo-slab", Hevetica, Arial, sans-serif;
             }
             a:hover{
                 color: black;
-                border-bottom: 5px solid black;
-                border-radius: 8px;
+                border-bottom: 2px solid black;
+                padding-bottom: 10px;
             }
         }
     }
@@ -101,7 +114,11 @@ code{
 }
 
 .inner{
-    
+
+    .index {
+        margin-top: 2px;
+    }
+
     pre {
         font-size: large;
         padding: 5px;
@@ -134,7 +151,7 @@ code{
        
         h2{
             margin-bottom: 10px;
-            margin-top: 10px;
+            margin-top: 2px;
         }
         ul{
             margin-top: 5px;
@@ -164,6 +181,7 @@ code{
     }
     .full_index {
         margin-left: 20px;
+        margin-top: 30px;
         width: 645px;
         float: left;
     }
@@ -222,7 +240,10 @@ code{
 }
 
 .fpnl{
+    width: 300px;
+    margin: auto;
     margin-bottom: 15px;
+    font-family: "museo-slab", Hevetica, Arial, sans-serif;
     a{
         text-align: center;
         color: white;

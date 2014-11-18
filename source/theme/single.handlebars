@@ -1,7 +1,6 @@
 {{> partials/header }}
 
 {{# each category_items }}
-    <h3 class='category_title'>Category: {{this.name}}</h3>
     <nav class='fpnl'>
         <a class='first' href="{{this.first.id}}.html">First</a>
         {{# if this.previous }}
@@ -24,6 +23,21 @@
     </div>
 
 </section>
+
+{{# each category_items }}
+    <nav class='fpnl'>
+        <a class='first' href="{{this.first.id}}.html">First</a>
+        {{# if this.previous }}
+            <a class='previous' href="{{this.previous.id}}.html">{{# if this.previous}} Previous {{/if}}</a>
+        {{/if}}
+        {{# if this.next }}
+            <a class='next' href="{{this.next.id}}.html">Next</a>
+        {{/if}}
+        <a class='last' href="{{this.last.id}}.html">Last</a>
+    </nav>
+    <div style='clear:both;'></div>
+{{/each}}
+
 
 <!-- DISQUS DROP-IN -->
 <div id="disqus_thread"></div>
