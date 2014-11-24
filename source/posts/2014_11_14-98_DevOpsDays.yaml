@@ -4,5 +4,13 @@ title: 98 - DevOpsDays
 created: "2014-11-14T20:18:15-07:00"
 visible: true
 categories: ["Cube Drone"]
-alt-text: "Are you a bad enough dude to save the president? She is."
+secret-text: "Are you a bad enough dude to save the president? She is."
+alt-text: |
+  Three speakers at DevOpsDays 2014
+   | Frame 1: 'The Seasoned Pro', A tall, serious looking woman delivering a presentation. 
+   | Woman: Here's how we got our stack to the point where we can spin up a new box... by blinking.
+   | Frame 2: 'The Rock & Roll', A different woman with flowing hair, dropping a microphone. 
+   | Woman: Here's how I took time off from my job at Google to save the U.S. Government, and also I brought this mic from home so I can drop it. BAM.
+   | Frame 3: 'The Holistic Approach', an older man with thinning hair and stubble, smiling and holding his hands together in a meditative way.
+   | Man: Everybody take a deep breath. In. Out. Now think of a time that someone used a proof-of-concept to win an argument. 
 comic: "http://curtis.lassam.net/comics/cube_drone/98.gif"

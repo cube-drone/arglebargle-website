@@ -4,5 +4,11 @@ title: 97 - Sparks Fly
 created: "2014-11-12T14:18:15-07:00"
 visible: true
 categories: ["Cube Drone"]
-alt-text: "I had a window open on dev and another window open on prod, and I think I entered this command in the wrong one"
+secret-text: "I had a window open on dev and another window open on prod, and I think I entered this command in the wrong one"
+alt-text: |
+  Frame 1: Cube Drone is talking to Milo
+   | Cube Drone: Yeah, Netflix's Chaos Monkey concept - killing services at random to test your distributed systems - it's a cool idea. 
+   | Frame 2: Milo: And that's why we have a co-op student.
+   | Frame 3: Sparky enters the frame. 
+   | Sparky: Guys, I'm not sure how a DELETE statement works in SQL, but I think I did something bad. 
 comic: "http://curtis.lassam.net/comics/cube_drone/97.gif"

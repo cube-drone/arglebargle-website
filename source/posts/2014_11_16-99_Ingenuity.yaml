@@ -4,5 +4,12 @@ title: 99 - Ingeniuty of Sorts
 created: "2014-11-16T20:18:15-07:00"
 visible: true
 categories: ["Cube Drone"]
-alt-text: "By 2037, the electric shocks had been added to the documentation."
+secret-text: "By 2037, the electric shocks had been added to the documentation."
+alt-text: |
+  The year is 2038. StackOverflow has become sentient. 
+   All it does is deliver strong shocks to coders who use tabs and spaces interchangeably. 
+   It started by trying to shock any remaining PHP coders. 
+   But most of them quickly decided that the shocks were just another feature of the language. 
+   When the shocks stopped, 3 PHP coders filed complaints, 
+   claiming that they had built critical functionality that depended on the periodic free electricity.
 comic: "http://curtis.lassam.net/comics/cube_drone/99.gif"

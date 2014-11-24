@@ -4,5 +4,10 @@ title: 101 - Junior Programmer Presentations
 created: "2014-11-20T07:18:15-07:00"
 visible: true
 categories: ["Cube Drone"]
-alt-text: "This also holds true for their articles and interpretive dance competitions"
+secret-text: "This also holds true for their articles and interpretive dance competitions"
+alt-text: |
+  The only three presentations that junior programmers ever give: 
+  | First frame: (Sparky stands on a podium, giving a presentation) 'Unit Testing: How Does it Work?',
+  | Second frame: 'Code Style: Tabs vs Spaces vs Neither, Where to Put The Curly Brace, The More Trivial the Better', 
+  | Third frame: 'Why My Code is Self Documenting, But Your Code Needs Comments, Examples, a Glossary and a Tutorial'
 comic: "http://curtis.lassam.net/comics/cube_drone/101.gif"
