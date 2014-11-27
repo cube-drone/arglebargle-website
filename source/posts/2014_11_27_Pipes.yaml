@@ -1,0 +1,13 @@
+--- 
+content_type: comic
+title: 103 - Pipes
+created: "2014-11-27T07:55:15-07:00"
+visible: true
+categories: ["Cube Drone"]
+secret-text: "You'd be surprised at how many of our solutions were already solved, 10 years before I was born."
+alt-text: |
+  Miloslav is delivering a presentation. 
+  | First frame: Let's talk about the Gulp build tool. A lot of you Javascripters are discovering that it is a lot more efficient to pass data from task to task rather than writing to disk between each step.
+  | Second frame: Or Akka Actors in Scala. Concurrency sure is simpler to manage with non-shared memory and immutable messages, huh?  Ok, with that, let's begin. 
+  | Third frame: (He waves at his presentation title) Processes & Pipes: They've been in Unix for like 40 goddamn years.
+comic: "http://curtis.lassam.net/comics/cube_drone/103.gif"
