@@ -1,0 +1,14 @@
+--- 
+content_type: comic
+title: 104 - Everybody is Hiring
+created: "2014-12-01T23:55:15-07:00"
+visible: true
+categories: ["Cube Drone"]
+secret-text: "I was really just trying to work the term 'sturdy delicious donkey' into a comic."
+alt-text: |
+  A series of presenters:
+  | First frame: Geeky Man: Thanks for listening - and if you're a talented software developer, Sauce Labs is hiring.
+  | Second frame: Bald Man: To conclude, we're hiring at Hootsuite.
+  | Third frame: Confused Man: And, of course, we're desperately hiring. 
+  | Fourth frame: Miloslav: Not only are we hiring, each new hire gets a sturdy, delicious donkey as a signing bonus.
+comic: "http://curtis.lassam.net/comics/cube_drone/103.gif"
