@@ -1,88 +1,95 @@
 {{> partials/header }}
 
-<div class='recent'>
-<ul class='index'>
-{{#each-limit index 1}}
-<li class='special post'>
-    <h2><a href="{{this.id}}.html">{{this.title}}</a></h2>
-    <h4>{{this.human_date}}</h4>
-    <a class='fade' href="{{this.id}}.html">
-        <div class='post_content'>
-            {{{this.html}}}
-        </div>
-    </a>
-    <a class='readmore' href="{{this.id}}.html">Read More!</a>
-    </li>
-{{/each-limit}}
-</ul>
-</div>
-
-<div class='featured featured_comic'>
+<div class='featured featured_comic col-md-4'>
+<div class='title_and_date'>
 <h2>Comics</h2>
-<ul>
 {{#each-limit reverse_categories.[Cube Drone] 1}}
-<li class='special post'>
     <h3><a href="{{this.id}}.html">{{this.title}}</a></h3> 
-    <a class='fade' href="{{this.id}}.html">
+    </div>
+    <a class='cover' href="{{this.id}}.html">
+    <a class='preview' href="{{this.id}}.html">
         <div class='post_content'>
         {{{this.html}}}
         </div>
     </a>
-    <a class='readmore' href="{{this.id}}.html">Read More!</a>
-    </li>
+    </a>
 {{/each-limit}}
-</ul>
 </div>
 
-<div class='featured featured_video'>
+<div class='featured featured_video col-md-4'>
+<div class='title_and_date'>
 <h2>Video</h2>
-<ul>
 {{#each-limit reverse_categories.[Cube Drone Video] 1}}
-<li class='special post'>
     <h3><a href="{{this.id}}.html">{{this.title}}</a></h3> 
-    <a class='fade' href="{{this.id}}.html">
+    </div>
+    <a class='cover' href="{{this.id}}.html">
+    <a class='preview' href="{{this.id}}.html">
         <div class='post_content'>
         {{{this.html}}}
         </div>
     </a>
-    <a class='readmore' href="{{this.id}}.html">Read More!</a>
-    </li>
+    </a>
 {{/each-limit}}
-</ul>
 </div>
 
-<div class='featured featured_blog'>
+<div class='featured featured_blog col-md-4'>
+<div class='title_and_date'>
 <h2>Blog</h2>
-<ul>
 {{#each-limit reverse_categories.[Blog] 1}}
-<li class='special post'>
     <h3><a href="{{this.id}}.html">{{this.title}}</a></h3> 
-    <a class='fade' href="{{this.id}}.html">
+    </div>
+    <a class='cover' href="{{this.id}}.html">
+    <a class='preview' href="{{this.id}}.html">
         <div class='post_content'>
         {{{this.html}}}
         </div>
     </a>
-    <a class='readmore' href="{{this.id}}.html">Read More!</a>
-    </li>
+    </a>
 {{/each-limit}}
-</ul>
 </div>
 
 <div style='clear:both;'></div>
 
-<div class='full_index'>
-<h2>Full Index</h2>
-<ul class='full-index'>
-{{#each index}}
-<li class='special post'>
-    <strong><a href="{{this.id}}.html">{{this.title}}</a></strong> 
-    - <small>{{this.human_date}}</small>
-</li>
-{{/each}}
-</ul>
+
+<div class='full_index col-md-8'>
+    <ul class="nav nav-tabs" role="tablist" id="index_tabs">
+        <li role="presentation" class="active"><a href="#full-index" aria-controls="full-index" role="tab" data-toggle="tab">Full Index</a></li>
+        {{#each-key categories}}
+            {{#not-eq this.key "Peru Trip"}}
+            <li role="presentation" ><a href="#{{urlify this.key}}" aria-controls="{{urlify this.key}}" role="tab" data-toggle="tab">{{this.key}}</a></li>
+            {{/not-eq}}
+        {{/each-key}}
+    </ul>
+
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="full-index">
+            <ul class='list-group'>
+            {{#each index}}
+            <a class='list-group-item' href="{{this.id}}.html">
+                <h3>{{this.title}}
+                - <small>{{this.human_date}}</small>
+                </h3>
+            </a>
+            {{/each}}
+            </ul>
+        </div>
+        {{#each-key categories}}
+        <div role="tabpanel" class="tab-pane" id="{{urlify this.key}}">
+            <ul class='list-group'>
+            {{#each-reverse this.value}}
+                <a class='list-group-item' href="{{this.id}}.html">
+                    <h3>{{this.title}}
+                    - <small>{{this.human_date}}</small>
+                    </h3>
+                </a>
+            {{/each-reverse}}
+            </ul>
+        </div>
+        {{/each-key}}
+    </div>
 </div>
 
-<div class='tweets'>
+<div class='tweets col-md-4 visible-lg visible-md'>
     <a class="twitter-timeline"  href="https://twitter.com/classam" data-widget-id="304715092187025408">Tweets by @classam</a>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
 </div>

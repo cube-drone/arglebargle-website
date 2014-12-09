@@ -1,32 +1,24 @@
     </div><!-- inner -->
     <div class='footer_separator'> </div>
-    <div class='footer'>
-        <div class='category cube_drone'>
-            <h2 id='cube_drone'>Cube Drone</h2>
-            <ul>
+    <div class='footer navbar navbar-inverse navbar-bottom'>
+        <div class='container-fluid'>
+        <div class='category col-md-3'>
+            <h2 id='cube_drone'>Last 5</h2>
+            <ul class='list-group'>
                 {{#each-limit reverse_categories.[Cube Drone] 5}}
-                    <li class='post'><a href="{{this.id}}.html">{{this.title}}</a></li>
+                    <a class='post list-group-item' href="{{this.id}}.html">{{this.title}}</a>
                 {{/each-limit}}
             </ul>
         </div>
-        <div class='category video'>
-            <h2 id='video'>Video</h2>
-            <ul>
-                {{#each-limit reverse_categories.[Cube Drone Video] 5}}
-                    <li class='post'><a href="{{this.id}}.html">{{this.title}}</a></li>
-                {{/each-limit}}
-            </ul>
-        </div>
-        <div class='category blog'>
-            <h2 id='video'>Blog</h2>
-            <ul>
-                {{#each-limit reverse_categories.[Blog] 5}}
-                    <li class='post'><a href="{{this.id}}.html">{{this.title}}</a></li>
-                {{/each-limit}}
-            </ul>
-        </div>
-        <div class='footer_content'>
-            <p>&copy; Curtis Lassam 2014</p>
+        <div class='footer_content col-md-3'>
+            <h2>Advertising</h2>
+                <!-- Advertising Content -->
+                <a href="http://upup.fm" onclick="trackOutboundLink('http://upup.fm');" target="_top">
+                    <img src="http://www.upup.fm/images/logo.png" width="200" height="200" alt="" border="0"/>
+                </a>
+            </div>
+        <div class='col-md-6 copyright'>
+            <p>&copy; <a href='http://curtis.lassam.net'>Curtis Lassam</a> 2014</p>
             <p>
                 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
                     <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
@@ -37,10 +29,16 @@
             </p>
             <p>This site built using the <a href="http://curtis.lassam.net/arglebargle">Arglebargle Website Engine</a></p>
         </div>
+        </div> 
         <div style='clear:both;'></div>
     </div>
     </div><!-- content -->
-    {{> js}}
+
+{{> js}}
+
+<script type="text/javascript">
+    $(function () {$('#index_tabs a:first').tab('show')})
+</script>
 
 <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -51,6 +49,16 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
+    /**
+    * Function that tracks a click on an outbound link in Google Analytics.
+    * This function takes a valid URL string as an argument, and uses that URL string
+    * as the event label.
+    */
+    var trackOutboundLink = function(url) {
+           ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+                function () { document.location = url; }
+            });
+    };
 </script>
 
 </body>

@@ -2,29 +2,40 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <!-- Font Awesome -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Inconsolata -->
     <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
-    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{config.subtitle}}"> 
 
     {{> css }}
     <title>{{config.title}}</title>
 
-    <!-- Typekit -->
+    <!-- Typekit (museo-slab, tenso) -->
     <script src="http://use.typekit.net/ehr0vuf.js"></script>
     <script>try{Typekit.load();}catch(e){console.log(e);}</script>
 </head>
 <body>
     <div class='content'>
     <div class='header'>
-        <nav class='nav'>
-            <ul>
-                <li><a href="http://curtis.lassam.net"><i class='fa fa-user'></i> Curtis</a></li>
-                <li><a href="http://twitter.com/classam"><i class='fa fa-twitter'></i> Twitter</a></li>
-                <li><a href="https://github.com/classam/"><i class='fa fa-github'></i> Github</a></li>
-                <li><a href="rss.xml"><i class='fa fa-rss'></i> RSS</a></li>
-            </ul>
+        <nav class='navbar navbar-default' role="navigation">
+            <div class='container-fluid'>
+                <div class='navbar-header'>
+                    <a class='navbar-brand' href="index.html"> 
+                        {{config.title}}
+                    </a>
+                    <p class='navbar-text'>
+                        {{config.subtitle}}
+                    </p>
+                </div>
+                <ul class='nav navbar-nav navbar-right'>
+                    <li><a href="http://curtis.lassam.net"><i class='fa fa-user'></i> Curtis Lassam</a></li>
+                    <li><a href="http://twitter.com/classam"><i class='fa fa-twitter'></i> Twitter</a></li>
+                    <li><a href="rss.xml"><i class='fa fa-rss'></i> RSS</a></li>
+                </ul>
+            </div> 
         </nav>
-        <h1><a href='index.html'>{{config.title}}</a></h1>
-        <h2>{{config.subtitle}}</h2>
     </div>
-    <div class='inner'>
+    <div class='inner container-fluid'>

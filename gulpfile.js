@@ -128,6 +128,11 @@ gulp.task('images', function(){
         .pipe(gulp.dest('./target/images/'))
 });
 
+gulp.task('bootstrap', function(){
+    return gulp.src('./source/theme/bootstrap/*/*')
+        .pipe(gulp.dest('./target/bootstrap/'))
+});
+
 
 gulp.task('pages', function(){
     return gulp.src(['./source/pages/*.md', './README.md'])
@@ -136,7 +141,7 @@ gulp.task('pages', function(){
         .pipe(gulp.dest('./target/partials/'))
 });
 
-gulp.task('partials', ['concatenate_master', 'pages', 'sass', 'css', 'images'], function(cb){
+gulp.task('partials', ['concatenate_master', 'pages', 'sass', 'css', 'images', 'bootstrap'], function(cb){
     gulp.src('./target/json/master.json')
         .pipe(jsonEditor(function(json){
             gulp.src('./source/theme/partials/*.handlebars')
@@ -144,9 +149,12 @@ gulp.task('partials', ['concatenate_master', 'pages', 'sass', 'css', 'images'], 
             .pipe(handlebars(json, {
                 'helpers': handlebarsHelpers,
                 'partials': {
-                    'css': "<link rel='stylesheet' href='css/minimal.css'>\n"+
-                           "<link rel='stylesheet' href='css/css_bundle.css'>",
-                    'js': "<script src='js/bundle.js'></script>"
+                    'css':  "<link rel='stylesheet' href='bootstrap/css/bootstrap.min.css'>\n" +
+                            "<link rel='stylesheet' href='bootstrap/css/bootstrap-theme.min.css'>\n" +
+                            "<link rel='stylesheet' href='css/minimal.css'>\n",
+                    'js': "<script src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>\n" + 
+                          "<script src='bootstrap/js/bootstrap.min.js'></script>\n" + 
+                          "<script src='js/bundle.js'></script>\n"
                 }
             }))
             .pipe(rename({extname:'.html'}))
