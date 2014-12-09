@@ -1,7 +1,7 @@
 {{> partials/header }}
 
 {{# each category_items }}
-    <ul class='fpnl nav nav-pills nav-justified'>
+    <ul class='fpnl nav nav-pills nav-justified hidden-xs hidden-sm'>
         <li><a class='first' href="{{this.first.id}}.html">First</a></li>
         {{# if this.previous }}
             <li><a class='previous' href="{{this.previous.id}}.html">{{# if this.previous}} Previous {{/if}}</a></li>
