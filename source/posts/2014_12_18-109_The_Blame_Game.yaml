@@ -1,0 +1,16 @@
+--- 
+content_type: comic
+title: 109 - The Blame Game
+created: "2014-12-18T10:05:15-07:00"
+visible: true
+categories: ["Cube Drone"]
+secret-text: "I'm not sure if the term 'Mexican Standoff' is really super appropriate."
+alt-text: |
+  Walt: Gentlemen, we had an hour-long service outage last night,
+  and I want to know why. 
+  | Warbeard: It was dev!
+  | Cube Drone: It was QA!
+  | Sparky: It was OPS!
+  | Warbeard, Sparky, and Cube Drone are all pointing at one another. 
+  | Cube Drone: It would appear we have a mexican standup on our hands. 
+comic: "http://curtis.lassam.net/comics/cube_drone/109.gif"
