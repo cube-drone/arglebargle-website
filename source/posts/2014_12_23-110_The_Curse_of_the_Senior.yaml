@@ -1,0 +1,18 @@
+--- 
+content_type: comic
+title: "The Curse of the Senior"
+created: "2014-12-23T12:05:15-07:00"
+visible: true
+categories: ["Cube Drone"]
+secret-text: ""
+alt-text: |
+  Miloslav's first day as a senior developer: 
+  Miloslav: Wonderful, I'll just open my text editor and co...
+  Walt: Milo! Could you look over these resumes? 
+  | Miloslav's 183rd day as a senior developer:
+  Miloslav: Finally! A chance to get my hands on some code!
+  Walt: Hey, about those estimates...
+  | Today: 
+  Miloslav (anguished): For the love of god, jut let me code!
+  Walt: I hate to bother you, but the investors want to see a demo. 
+comic: "http://curtis.lassam.net/comics/cube_drone/110.gif"
