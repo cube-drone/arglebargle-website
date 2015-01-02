@@ -1,0 +1,21 @@
+--- 
+content_type: comic
+title: "113 - Happy New Year"
+created: "2015-01-01T16:05:15-07:00"
+visible: true
+categories: ["Cube Drone"]
+comic: "http://curtis.lassam.net/comics/cube_drone/113.gif"
+secret-text: "Sparky hardcoded the year into something. The joke has now been explained."
+alt-text: |
+  Happy New Year!
+  The whole team is standing around on a roof. Walt is holding champagne. 
+  *POP*
+  Walt: A toast!
+  | Walt: To a team who can handle just about anything!
+  | Xyzzy (remoting in, on a phone): To working from home!
+  | Lain: To long life and short line lengths!
+  | Miloslav: To failing fast while you can
+  | Warbeard: And failing gracefully at 3AM
+  | Cube-Drone: And to never hardcoding the year into anything! 
+  | Everyone but Sparky: Cheers!
+  | Sparky: shit.
