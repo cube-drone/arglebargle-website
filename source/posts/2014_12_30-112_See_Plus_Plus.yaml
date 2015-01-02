@@ -1,0 +1,20 @@
+--- 
+content_type: comic
+title: "112 - C How They Run"
+created: "2014-12-30T10:05:15-07:00"
+visible: true
+categories: ["Cube Drone"]
+comic: "http://curtis.lassam.net/comics/cube_drone/112.jpg"
+secret-text: "You're free to use whatever subset you like, so long as you're okay with every other C++ programmer using whatever subset THEY like. C++ programmers don't like to share."
+alt-text: |
+  The year is 2038.
+  C++ now has every feature from every programming language. 
+  Lazy evaluation.
+  Predictive parameters.
+  Garbage compaction.
+  Macro pointers. 
+  Closure metaprogramming.
+  Stack shuffling. 
+  Emotional introspection. 
+  De-Cursion.
+  Nobody has voluntarily used C++ for over 17 years. 
