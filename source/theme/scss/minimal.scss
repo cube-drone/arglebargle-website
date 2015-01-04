@@ -67,10 +67,13 @@ h1,h2,h3,h4,h5,h6{
 .post{
     max-width: 1000px;
     margin: auto;
+    img{
+        max-width: 1100px;
+    }
 }
 
 .post_content{
-    margin-left: 30px;
+    margin-left: 10px;
     p, ul{
         max-width: 1000px;
     }
