@@ -1,0 +1,19 @@
+--- 
+content_type: comic
+title: "114 - Office Space"
+created: "2015-01-06T08:05:15-07:00"
+visible: true
+categories: ["Cube Drone"]
+comic: "http://curtis.lassam.net/comics/cube_drone/114.gif"
+secret-text: "They can't work above a Pinkberry anymore. It's distracting."
+alt-text: |
+  Walt: Before we start searching for a new office, let's write down some priorities.
+  | 15 Minutes Later: A whiteboard filled with options.
+  * Quiet: 7 pts
+  * Coffee: 5 pts
+  * Don't Want to Sit Next to Sparky: 3 pts
+  * Fortifiable (In Case of Zombies): 1 pt
+  * Beige 
+  * Hot Tub: 2 pts
+  * Treehouse: 1 pt
+  | Walt: I think we can work with this.
