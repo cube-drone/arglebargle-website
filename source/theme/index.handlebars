@@ -1,6 +1,6 @@
 {{> partials/header }}
 
-<div class='featured featured_comic col-md-4'>
+<div class='featured featured_comic col-md-3 col-sm-6'>
 <div class='title_and_date'>
 <h2>Comics</h2>
 {{#each-limit reverse_categories.[Cube Drone] 1}}
@@ -16,7 +16,18 @@
 {{/each-limit}}
 </div>
 
-<div class='featured featured_video col-md-4'>
+<div class='featured featured_blog col-md-3 col-sm-6'>
+<div class='title_and_date'>
+<h2>Meet the Cast</h2>
+    </div>
+    <a class='cover' href='meet_the_cast.html'>
+    <a class='preview' href='meet_the_cast.html'>
+    <img width='1000' src='http://curtis.lassam.net/comics/cube_drone/team.gif'>
+    </a>
+    </a>
+</div>
+
+<div class='featured featured_video col-md-3 col-sm-6'>
 <div class='title_and_date'>
 <h2>Video</h2>
 {{#each-limit reverse_categories.[Cube Drone Video] 1}}
@@ -32,7 +43,7 @@
 {{/each-limit}}
 </div>
 
-<div class='featured featured_blog col-md-4'>
+<div class='featured featured_blog col-md-3 col-sm-6'>
 <div class='title_and_date'>
 <h2>Blog</h2>
 {{#each-limit reverse_categories.[Blog] 1}}
@@ -49,7 +60,6 @@
 </div>
 
 <div style='clear:both;'></div>
-
 
 <div class='full_index col-md-8'>
     <ul class="nav nav-tabs" role="tablist" id="index_tabs">
