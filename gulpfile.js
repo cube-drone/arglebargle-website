@@ -137,7 +137,6 @@ gulp.task('bootstrap', function(){
 gulp.task('pages', function(){
     return gulp.src(['./source/pages/*.md', './README.md'])
         .pipe(markdown())
-        .pipe(toc())
         .pipe(gulp.dest('./target/partials/'))
 });
 
