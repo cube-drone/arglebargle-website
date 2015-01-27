@@ -50,11 +50,13 @@
     <h3><a href="{{this.id}}.html">{{this.title}}</a></h3> 
     </div>
     <a class='cover' href="{{this.id}}.html">
-    <a class='preview' href="{{this.id}}.html">
-        <div class='post_content'>
-        {{{this.html}}}
-        </div>
-    </a>
+    <div class='preview' style='display:block' href="{{this.id}}.html">
+        <a href="{{this.id}}.html">
+            <div class='post_content'>
+            {{{this.html}}}
+            </div>
+        </a>
+    </div>
     </a>
 {{/each-limit}}
 </div>
