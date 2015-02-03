@@ -1,0 +1,18 @@
+--- 
+content_type: comic
+title: "122 - If Programming Languages Were Vehicles II"
+created: "2015-02-03T10:35:15-07:00"
+visible: true
+categories: ["Cube Drone"]
+comic: "http://curtis.lassam.net/comics/cube_drone/122.gif"
+secret-text: "I thought Scala was a wonderful idea and a beautifully expressive language until I saw some other people's Scala. Nobody got the memo about operator overloading being terrible, apparently. "
+alt-text: |
+  Haskell is an electric car. Everybody agrees that it is the technology of the future, 
+  and yet, 20 years later, adoption is still niche. Proponents insist that it is
+  practical and easy to use, but it still has a perhaps-deserved reputation of being
+  a monumental pain in the ass. 
+  | O'Caml is a solar car. Only ever seen in R&D departments and university campuses;
+  doesn't work when it's raining outside. 
+  | Toyota knew that the trick to getting people to accept a new technology was to 
+  anchor it to something old, reliable, popular, and awful, so the prius contained
+  an internal combustion engine. Scala. 

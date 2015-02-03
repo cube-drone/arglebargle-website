@@ -1,0 +1,19 @@
+--- 
+content_type: comic
+title: "121 - If Programming Languages Were Vehicles"
+created: "2015-02-02T10:35:15-07:00"
+visible: true
+categories: ["Cube Drone"]
+comic: "http://curtis.lassam.net/comics/cube_drone/121.gif"
+secret-text: "That's a 1972 Honda CB750, a 1995 Toyota Tercel, and a 1983 General Electric Fridge"
+alt-text: |
+  C would be a motorcycle. Popular with tinkerers and performance enthusiasts - who will tell you
+  that it is only dangerous if you don't take the proper safety precautions, often while nursing
+  a fresh injury.
+  | PHP was your first car. It was really easy to get started with, and it was a great way to
+  get around. It had some ... idiosyncrasies that made it a pain in the ass, sometimes, 
+  but you still remember it fondly. "The ashtray smells like cheese." "Yeah, it just does
+  that sometimes."
+  | C++ is the same motorcycle from before, but with a fridge strapped to the top. You can 
+  do anything you want, with fridgebike. It has every feature you will ever need - and 
+  so easy to use!  Fridgebike.  Shh... fridgebike. 
