@@ -1,0 +1,16 @@
+--- 
+content_type: comic
+title: "123 - If Programming Languages Were Vehicles III"
+created: "2015-02-04T10:35:15-07:00"
+visible: true
+categories: ["Cube Drone"]
+comic: "http://curtis.lassam.net/comics/cube_drone/123.gif"
+secret-text: "Even lisp proponents will probably agree that 'car' and 'cdr' are bad names for 'first' and 'tail'"
+alt-text: |
+  Mumps is a 1966 Datsun Sunny. You've never heard of it, it's half a century old, and if you hunt around, you
+  can still find people who depend on it. Sad, confused people. 
+  | Nobody really likes Javascript, but a lot of people use it anyways because it's everywhere and they don't
+  have any other options. It's a bus.
+  | Lisp isn't a car. It's the idea of a car. No, a collection of ideas. 
+  A toolkit that you can use to imagineer a car of your very own! A mental framework. 
+  It is popular with people who think that they are very good at designing their own vehicles. 
