@@ -1,0 +1,19 @@
+--- 
+content_type: comic
+title: "125 - It's Totally Automatic"
+created: "2015-02-10T07:35:15-07:00"
+visible: true
+categories: ["Cube Drone"]
+comic: "http://curtis.lassam.net/comics/cube_drone/125.gif"
+secret-text: "And you would have got away with it, too, if you did a random selection _without_ replacement!"
+alt-text: |
+  <in chat>
+  Cube Drone: XYZZY, do you think we're ready to launch?
+  XYZZY: I'm not sure about internationalization. 
+  Cube Drone: For an image widget?
+  XYZZY: I agree.
+  XYZZY: Have you talked to ops?
+  Cube Drone: Yeah, I have. 
+  XYZZY: I'm not sure about internationalization. 
+  Cube Drone: Wait a minute. 
+  | (XYZZY is asleep in his own apartment)
