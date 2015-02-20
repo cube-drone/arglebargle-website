@@ -1,0 +1,10 @@
+--- 
+content_type: comic
+title: "127 - A SQL Joke"
+created: "2015-02-20T07:35:15-07:00"
+visible: true
+categories: ["Cube Drone"]
+comic: "http://curtis.lassam.net/comics/cube_drone/127.gif"
+secret-text: "Okay, so, the joke is, 'Alter Table' and 'Drop Table' are SQL commands, whereas 'Flip Table' is an expression of anger that you might experience after accidentally Dropping a table, which deletes all of the data contained within. "
+alt-text: |
+  ALTER TABLE | DROP TABLE (Oh shiiiiit) | FLIP TABLE (Cube Drone flips his table over in anger)
