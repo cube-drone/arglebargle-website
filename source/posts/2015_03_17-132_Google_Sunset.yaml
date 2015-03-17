@@ -1,0 +1,14 @@
+--- 
+content_type: comic
+title: "132 - Google Sunset"
+created: "2015-03-17T09:35:15-07:00"
+visible: true
+categories: ["Cube Drone"]
+comic: "http://curtis.lassam.net/comics/cube_drone/132.gif"
+secret-text: "Don't worry, we'll just move everything to SourceForge, or - I guess maybe BitBucket."
+alt-text: |
+  Cube Drone: Did you hear? They're shutting down Google Code. 
+  | Sparky: Oh no! My Subversion projects!
+  | Cube Drone: <exasperated> God dammit, Sparky. 
+  | Sparky: Aaaaaaaa!
+
