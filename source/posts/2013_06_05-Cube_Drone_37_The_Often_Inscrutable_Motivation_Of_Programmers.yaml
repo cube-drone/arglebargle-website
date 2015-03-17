@@ -5,4 +5,12 @@ created: "2013-06-05T01:05:00-07:00"
 visible: true
 categories: ["Cube Drone" ]
 comic: "http://curtis.lassam.net/comics/cube_drone/37.gif"
-alt-text: "George Mallory is famously quoted as answering the question &ldquo;Why do you want to climb Mount Everest?&rdquo; with the retort &ldquo;Because its there&rdquo;."
+secret-text: "George Mallory is famously quoted as answering the question 'Why do you want to climb Mount Everest?' with the retort 'Because it's there'."
+alt-text: 
+  | Cube Drone: Check this out! I built a file encoding program that uses markov chains to convert files into seemingly random english paragraphs, so that I can use blog
+  comments as a free online file storage system.
+  | ( A Blog Comments Page ) 3 Comments: 
+    BADASSMOFO: Enough of that, the restaurant is going to be free, and very powerful. I suspect that my credit card numbers have no card
+    at all. What a waste! I even mention the wave of nicknames spreading across America. And now I'm free, free as a big pile of 
+    MACHEATH: What?
+  | Walt: Why?  Cube Drone: I... don't know. 
