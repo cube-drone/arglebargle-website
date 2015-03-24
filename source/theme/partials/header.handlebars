@@ -24,13 +24,18 @@
     <div class='header'>
         <nav class='navbar navbar-default' role="navigation">
             <div class='container-fluid'>
-                <div class='navbar-header'>
-                    <a class='navbar-brand' href="index.html"> 
+                <div class='navbar-header header-lg hidden-xs hidden-sm'>
+                    <a class='navbar-brand one' href="index.html"> 
                         {{config.title}}
                     </a>
-                    <p class='navbar-text'>
-                        {{config.subtitle}}
-                    </p>
+                    <a class='navbar-brand two' href="index.html"> 
+                        <small>{{config.subtitle}}</small>
+                    </a>
+                </div>
+                <div class='navbar-header header-sm hidden-md hidden-lg'>
+                    <a class='navbar-brand one' href="index.html"> 
+                        {{config.title}} <small>{{config.subtitle}}</small>
+                    </a>
                 </div>
                 <ul class='nav navbar-nav navbar-right hidden-xs hidden-sm'>
                     <li><a href="http://curtis.lassam.net"><i class='fa fa-user'></i> Curtis Lassam</a></li>
