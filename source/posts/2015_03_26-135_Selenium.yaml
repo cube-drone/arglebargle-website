@@ -1,0 +1,15 @@
+--- 
+content_type: comic
+title: "135 - User Interface Automation"
+created: "2015-03-26T09:35:15-07:00"
+visible: true
+categories: ["Cube Drone"]
+comic: "http://curtis.lassam.net/comics/cube_drone/135.gif"
+secret-text: "Everything's a horrifying story with you, Milo. Why not just say 'we shouldn't use Selenium'?"
+alt-text: |
+  Miloslav and Walt, talking in the kitchen | 
+  Miloslav: Imagine being trapped in inky black quicksand up to your waist -
+  your hopeless struggle to claw yourself free only hastening your demise. 
+  | They stare at one another 
+  | Walt: So, you're saying we shouldn't build a suite of Selenium tests
+  for our app.
